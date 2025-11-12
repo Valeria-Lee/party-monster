@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://csgwtad8eom5r"]
+
+[ext_resource type="Texture2D" uid="uid://b3i07quj70pml" path="res://assets/img/bakery/tray_cookie_2.png" id="1_p552j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jq17n"]
+size = Vector3(0.402206, 0.121582, 0.210266)
+
+[node name="CookieTray2" type="StaticBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_p552j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.39233e-05, 0.000244141, -0.00143433)
+shape = SubResource("BoxShape3D_jq17n")

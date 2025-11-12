@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cprjb4dxdu0sl"]
+
+[ext_resource type="Texture2D" uid="uid://bsks1ub8jdu6u" path="res://assets/img/sky_prueba.png" id="1_81mq5"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jyhhn"]
+panorama = ExtResource("1_81mq5")
+filter = false
+
+[sub_resource type="Sky" id="Sky_g52hx"]
+sky_material = SubResource("PanoramaSkyMaterial_jyhhn")
+
+[sub_resource type="Environment" id="Environment_nuohd"]
+background_mode = 2
+sky = SubResource("Sky_g52hx")
+sky_rotation = Vector3(0, 1.74533, 0)
+ambient_light_color = Color(1, 1, 1, 1)
+tonemap_mode = 3
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 1.0
+glow_bloom = 0.2
+glow_blend_mode = 1
+
+[node name="Environment" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.939693, 0.296198, -0.17101, 0, 0.5, 0.866025, 0.34202, -0.813798, 0.469846, -0.45082, 3.72383, 2.40229)
+light_color = Color(0.828478, 0.892315, 0.469157, 1)
+light_volumetric_fog_energy = 2.939
+shadow_enabled = true
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_nuohd")

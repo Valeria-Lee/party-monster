@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dcqhjlxbeog21"]
+
+[ext_resource type="Script" path="res://inventory/item.gd" id="1_rjtn0"]
+[ext_resource type="Texture2D" uid="uid://b5ofnjbltx1c7" path="res://assets/img/items/cupcake_pink.png" id="2_hh31w"]
+
+[resource]
+script = ExtResource("1_rjtn0")
+name = "Cupcake"
+texture = ExtResource("2_hh31w")
+isFood = true
+isDeco = false
+price = 2

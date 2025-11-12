@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogues" load_steps=2 format=3 uid="uid://d0wgxefnbql3i"]
+
+[ext_resource type="Script" uid="uid://cm2tbk4352y0g" path="res://dialogue/dialogues.gd" id="1_h146l"]
+
+[resource]
+script = ExtResource("1_h146l")
+character = "chef"
+current_index = 0
+dialogues = Array[String](["heey", "have you seen the ads outside?... a little bit invasive, I can tell, but they’re paying $1… *cough* a good amount of money", "apparently, they’re looking for someone that stole some junk, I don’t know why would someone want something like that", "oh, you know who they are… the ones over us?... the people with the power?... the government", "they even got me to put one of them inside, but I also use it for self promotion :)", "anyways, I’m having a problem with my main system. I remember you were an engineer or something like that, can you help me, bud?"])

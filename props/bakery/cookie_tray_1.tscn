@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfy6xv0a3xq0v"]
+
+[ext_resource type="Texture2D" uid="uid://dvodgpyvpq7y4" path="res://assets/img/bakery/tray_cookie_1.png" id="1_70htd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ve3o"]
+size = Vector3(0.401794, 0.123535, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0vi23"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.466667, 0.517647, 0.521569, 0.8)
+
+[sub_resource type="SphereMesh" id="SphereMesh_jgtrb"]
+lightmap_size_hint = Vector2i(2, 2)
+radius = 0.02
+height = 0.04
+
+[node name="CookieTray1" type="StaticBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_70htd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000152588, 0.000732422, 0)
+shape = SubResource("BoxShape3D_4ve3o")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.172658, -0.00141028)
+material_override = SubResource("StandardMaterial3D_0vi23")
+amount = 6
+mesh = SubResource("SphereMesh_jgtrb")
+emission_shape = 2
+emission_sphere_radius = 0.2
+gravity = Vector3(0, 0.5, 0)
+scale_amount_min = 0.2
+scale_amount_max = 2.0
+color = Color(0.566049, 0.63491, 0.223712, 1)

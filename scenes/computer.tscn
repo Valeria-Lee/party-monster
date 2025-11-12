@@ -1,0 +1,420 @@
+[gd_scene load_steps=17 format=3 uid="uid://d0v7fu3apbu2t"]
+
+[ext_resource type="Script" uid="uid://cxleqw2aocohe" path="res://scripts/computer.gd" id="1_w3t5c"]
+[ext_resource type="Texture2D" uid="uid://cmvcovf1kruq1" path="res://assets/img/ui/laptop_wallpaper.png" id="2_8csi1"]
+[ext_resource type="Shader" uid="uid://c13pc7frxl8ne" path="res://crt.gdshader" id="3_e6xvh"]
+[ext_resource type="Theme" uid="uid://dtvh5xtqn2e82" path="res://ui/current_theme.tres" id="3_s2nq3"]
+[ext_resource type="StyleBox" uid="uid://phlrmq7v1vua" path="res://ui/comp_button.tres" id="4_bvtkm"]
+[ext_resource type="Texture2D" uid="uid://b1gdb45x1aum" path="res://assets/img/ui/bar.png" id="4_tc663"]
+[ext_resource type="Texture2D" uid="uid://bhk44dga7xbmi" path="res://assets/img/ui/-.png" id="5_scvnt"]
+[ext_resource type="Texture2D" uid="uid://dtcv51g4x0fej" path="res://assets/img/ui/console_bg.png" id="6_0u5ul"]
+[ext_resource type="Texture2D" uid="uid://6tauvs6vth3" path="res://assets/img/ui/square.png" id="6_ad3q1"]
+[ext_resource type="Texture2D" uid="uid://dktx6x257tgk7" path="res://assets/img/ui/x.png" id="7_03qga"]
+[ext_resource type="Texture2D" uid="uid://b3c1dxchfy8u8" path="res://assets/img/ui/input_app_icon.png" id="8_s8wx6"]
+[ext_resource type="Texture2D" uid="uid://vkgv5yka5qsn" path="res://assets/img/ui/display_app_icon.png" id="9_01el2"]
+[ext_resource type="Texture2D" uid="uid://bxr1recuyrc24" path="res://assets/img/ui/business_icon.png" id="13_8hyn1"]
+[ext_resource type="Texture2D" uid="uid://bb88p37x1pl8v" path="res://assets/img/ui/command_label_g2.png" id="13_k81uv"]
+[ext_resource type="Texture2D" uid="uid://cerxjyhaakmy6" path="res://assets/img/ui/command_label_g1.png" id="14_enlsg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wk7hd"]
+shader = ExtResource("3_e6xvh")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[node name="Computer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w3t5c")
+
+[node name="ShaderLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="ShaderLayer"]
+material = SubResource("ShaderMaterial_wk7hd")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UIRoot" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Bar" type="HBoxContainer" parent="CanvasLayer/UIRoot"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 540.0
+offset_right = 1150.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/UIRoot/Bar"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 2
+
+[node name="InputAppButton" type="Button" parent="CanvasLayer/UIRoot/Bar/GridContainer"]
+layout_mode = 2
+tooltip_text = "INPUT TERMINAL"
+theme_override_styles/hover = ExtResource("4_bvtkm")
+theme_override_styles/normal = ExtResource("4_bvtkm")
+icon = ExtResource("8_s8wx6")
+
+[node name="DisplayAppButton" type="Button" parent="CanvasLayer/UIRoot/Bar/GridContainer"]
+layout_mode = 2
+tooltip_text = "DISPLAY TERMINAL"
+theme_override_styles/hover = ExtResource("4_bvtkm")
+theme_override_styles/normal = ExtResource("4_bvtkm")
+icon = ExtResource("9_01el2")
+
+[node name="InputConsole" type="Control" parent="CanvasLayer/UIRoot"]
+custom_minimum_size = Vector2(576, 324)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 576.0
+offset_bottom = 324.0
+
+[node name="ConsoleBG" type="TextureRect" parent="CanvasLayer/UIRoot/InputConsole"]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 196.0
+offset_right = 1061.0
+offset_bottom = 520.0
+texture = ExtResource("6_0u5ul")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/UIRoot/InputConsole"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 377.0
+offset_top = 196.0
+offset_right = 485.0
+offset_bottom = 244.0
+grow_horizontal = 0
+theme_override_constants/h_separation = 0
+columns = 3
+
+[node name="Minimize" type="Button" parent="CanvasLayer/UIRoot/InputConsole/GridContainer"]
+layout_mode = 2
+theme = ExtResource("3_s2nq3")
+theme_override_styles/normal = ExtResource("4_bvtkm")
+icon = ExtResource("5_scvnt")
+
+[node name="ChangeSize" type="Button" parent="CanvasLayer/UIRoot/InputConsole/GridContainer"]
+layout_mode = 2
+theme = ExtResource("3_s2nq3")
+theme_override_styles/normal = ExtResource("4_bvtkm")
+icon = ExtResource("6_ad3q1")
+
+[node name="Exit" type="Button" parent="CanvasLayer/UIRoot/InputConsole/GridContainer"]
+layout_mode = 2
+theme = ExtResource("3_s2nq3")
+theme_override_styles/normal = ExtResource("4_bvtkm")
+icon = ExtResource("7_03qga")
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/UIRoot/InputConsole"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 200.0
+offset_top = 72.0
+offset_right = 770.0
+offset_bottom = 355.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_s2nq3")
+theme_override_colors/background_color = Color(0, 0.629075, 0.454695, 0.129412)
+placeholder_text = ">>"
+
+[node name="DisplayConsole" type="Control" parent="CanvasLayer/UIRoot"]
+custom_minimum_size = Vector2(576, 324)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 89.5066
+offset_top = 119.007
+offset_right = 665.507
+offset_bottom = 443.007
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ConsoleBG" type="TextureRect" parent="CanvasLayer/UIRoot/DisplayConsole"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 577.0
+offset_bottom = 325.0
+texture = ExtResource("6_0u5ul")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UIRoot/DisplayConsole"]
+layout_mode = 0
+offset_left = 19.5524
+offset_top = 45.5516
+offset_right = 201.552
+offset_bottom = 85.5516
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/UIRoot/DisplayConsole/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("13_k81uv")
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/UIRoot/DisplayConsole/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("14_enlsg")
+stretch_mode = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/UIRoot/DisplayConsole"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 46.0
+offset_right = 185.0
+offset_bottom = 86.0
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="CanvasLayer/UIRoot/DisplayConsole/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_s2nq3")
+text = "home"
+
+[node name="Label2" type="Label" parent="CanvasLayer/UIRoot/DisplayConsole/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_s2nq3")
+text = "user"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UIRoot/DisplayConsole"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UIRoot/DisplayConsole/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+theme = ExtResource("3_s2nq3")
+theme_override_colors/default_color = Color(0.45098, 0.666667, 0.643137, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center][shake]"
+fit_content = true
+scroll_active = false
+
+[node name="WinRounds" type="Label" parent="CanvasLayer/UIRoot/DisplayConsole/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_s2nq3")
+theme_override_font_sizes/font_size = 12
+text = "0/3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/UIRoot/DisplayConsole"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -108.0
+offset_bottom = 36.0
+grow_horizontal = 0
+theme_override_constants/h_separation = 0
+columns = 3
+
+[node name="Button3" type="Button" parent="CanvasLayer/UIRoot/DisplayConsole/GridContainer"]
+layout_mode = 2
+theme = ExtResource("3_s2nq3")
+theme_override_styles/normal = ExtResource("4_bvtkm")
+icon = ExtResource("5_scvnt")
+
+[node name="Button2" type="Button" parent="CanvasLayer/UIRoot/DisplayConsole/GridContainer"]
+layout_mode = 2
+theme = ExtResource("3_s2nq3")
+theme_override_styles/normal = ExtResource("4_bvtkm")
+icon = ExtResource("6_ad3q1")
+
+[node name="Button" type="Button" parent="CanvasLayer/UIRoot/DisplayConsole/GridContainer"]
+layout_mode = 2
+theme = ExtResource("3_s2nq3")
+theme_override_styles/normal = ExtResource("4_bvtkm")
+icon = ExtResource("7_03qga")
+
+[node name="IMG" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Wallpaper" type="TextureRect" parent="IMG"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 580.0
+texture = ExtResource("2_8csi1")
+
+[node name="TextureRect" type="TextureRect" parent="IMG"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -68.0
+offset_right = 576.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_tc663")
+
+[node name="SplashScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="SplashScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SplashScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="SplashScreen/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("13_8hyn1")
+stretch_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SplashScreen/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+theme = ExtResource("3_s2nq3")
+theme_override_colors/default_color = Color(0.772549, 0.729412, 0.741176, 1)
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "[center][shake]WELCOME TO YOUR PC"
+fit_content = true
+scroll_active = false
+
+[node name="PasswordField" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TextEdit" type="TextEdit" parent="PasswordField"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = 124.0
+offset_right = 271.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_s2nq3")
+theme_override_colors/background_color = Color(0, 0, 0, 1)
+placeholder_text = ">>"
+
+[node name="WinScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="WinScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WinScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="WinScreen/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("13_8hyn1")
+stretch_mode = 3
+
+[node name="PasswordLabel" type="RichTextLabel" parent="WinScreen/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+theme = ExtResource("3_s2nq3")
+theme_override_colors/default_color = Color(0.772549, 0.729412, 0.741176, 1)
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[connection signal="pressed" from="CanvasLayer/UIRoot/Bar/GridContainer/InputAppButton" to="." method="_on_input_app_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/UIRoot/Bar/GridContainer/DisplayAppButton" to="." method="_on_display_app_button_pressed"]

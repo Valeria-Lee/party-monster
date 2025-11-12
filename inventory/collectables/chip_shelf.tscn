@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnj13hpn5fuqc"]
+
+[ext_resource type="Script" uid="uid://dfw8ceo81xa6u" path="res://scripts/chip_shelf.gd" id="1_wvq2d"]
+[ext_resource type="Resource" uid="uid://byvmpnss0kix5" path="res://inventory/collectables/chips.tres" id="2_eyyne"]
+[ext_resource type="Texture2D" uid="uid://ce37xgdnj01i7" path="res://assets/img/supermarket/chips_shelf.png" id="2_kbo1x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_10nwp"]
+size = Vector3(1.55469, 1.07861, 1)
+
+[node name="ChipShelf" type="Area3D"]
+script = ExtResource("1_wvq2d")
+item = ExtResource("2_eyyne")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
+texture_filter = 0
+texture = ExtResource("2_kbo1x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0012207, 0.438477)
+shape = SubResource("BoxShape3D_10nwp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

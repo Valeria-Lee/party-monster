@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://b35kfo5a3vsuk"]
+
+[ext_resource type="Script" path="res://scripts/cash_register.gd" id="1_3brue"]
+[ext_resource type="Texture2D" uid="uid://ctdw0u4xk1nyg" path="res://assets/img/bakery/bakery_cash_register.png" id="1_xaraa"]
+[ext_resource type="FontFile" uid="uid://b3ji0dguwdgf0" path="res://assets/font/dogicapixel.otf" id="2_f2s5x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_di6s1"]
+size = Vector3(0.683838, 0.310303, 0.130127)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fy8v8"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7075f"]
+radius = 0.891012
+
+[node name="CashRegister" type="StaticBody3D"]
+script = ExtResource("1_3brue")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_xaraa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00354004, -0.15686, -0.00183105)
+shape = SubResource("BoxShape3D_di6s1")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(40, 30)
+
+[node name="Label" type="Label" parent="SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -11.5
+offset_right = 24.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.45098, 0.666667, 0.643137, 1)
+theme_override_fonts/font = ExtResource("2_f2s5x")
+theme_override_font_sizes/font_size = 12
+text = "10"
+horizontal_alignment = 1
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0709991, 0.389805, -0.0899611)
+light_color = Color(0, 0.458758, 0.170657, 1)
+light_energy = 3.0
+light_indirect_energy = 3.0
+light_volumetric_fog_energy = 3.0
+light_bake_mode = 1
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0613032, 0.329839, 0.0325965)
+gi_mode = 2
+billboard = 2
+texture_filter = 0
+texture = SubResource("ViewportTexture_fy8v8")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_7075f")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

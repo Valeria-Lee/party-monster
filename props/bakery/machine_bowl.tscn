@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://srt541r1477f"]
+
+[ext_resource type="Texture2D" uid="uid://cat6703y4nx4i" path="res://assets/img/bakery/bowl_drop.png" id="1_dkomc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6cr3"]
+atlas = ExtResource("1_dkomc")
+region = Rect2(0, 0, 68, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5855a"]
+atlas = ExtResource("1_dkomc")
+region = Rect2(68, 0, 68, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sr2n"]
+atlas = ExtResource("1_dkomc")
+region = Rect2(136, 0, 68, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sulp4"]
+atlas = ExtResource("1_dkomc")
+region = Rect2(204, 0, 68, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_46dw8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6cr3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5855a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sr2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sulp4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_74teq"]
+size = Vector3(0.667542, 0.441914, 0.126648)
+
+[node name="MachineBowl" type="StaticBody3D"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_46dw8")
+autoplay = "default"
+frame = 2
+frame_progress = 0.105206
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00454712, -0.000619888, -0.00363159)
+shape = SubResource("BoxShape3D_74teq")

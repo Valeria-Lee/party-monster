@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cilsa05anhi8d"]
+
+[ext_resource type="Script" path="res://inventory/item.gd" id="1_rhv28"]
+[ext_resource type="Texture2D" uid="uid://ch5le7m618nqq" path="res://assets/img/items/donut_pink.png" id="2_w6m84"]
+
+[resource]
+script = ExtResource("1_rhv28")
+name = "Donut"
+texture = ExtResource("2_w6m84")
+isFood = true
+isDeco = false
+price = 3

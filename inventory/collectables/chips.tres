@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://byvmpnss0kix5"]
+
+[ext_resource type="Script" path="res://inventory/item.gd" id="1_ngrah"]
+[ext_resource type="Texture2D" uid="uid://c6mr1nhnjyw3c" path="res://assets/img/supermarket/chips.png" id="2_0c77m"]
+
+[resource]
+script = ExtResource("1_ngrah")
+name = "Chips"
+texture = ExtResource("2_0c77m")
+isFood = true
+isDeco = false
+price = 8

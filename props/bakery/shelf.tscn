@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://jhv07ntulque"]
+
+[ext_resource type="Texture2D" uid="uid://tc0mfxe8l8as" path="res://assets/img/bakery/shelf.png" id="1_i41s2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b7eky"]
+size = Vector3(0.642548, 0.163513, 0.226807)
+
+[node name="Shelf" type="StaticBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_i41s2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.57764e-05, 0.000579834, -0.00231934)
+shape = SubResource("BoxShape3D_b7eky")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://db6h6q8omx4m7"]
+
+[ext_resource type="Texture2D" uid="uid://btiyld6lpiyf8" path="res://assets/img/supermarket/green_light.png" id="1_8okyb"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2ikkf"]
+radius = 0.0737827
+height = 0.967856
+
+[node name="Light" type="StaticBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
+texture_filter = 0
+texture = ExtResource("1_8okyb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_2ikkf")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.31662, 0.097168)
+light_color = Color(0.297668, 0.744161, 0.0949393, 1)
+omni_range = 1.0
+omni_attenuation = 1.10957

@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://ledn6d6rjdv2"]
+
+[ext_resource type="Texture2D" uid="uid://byknsjlls0bka" path="res://assets/img/bakery/refrigerator.png" id="1_1c5lf"]
+[ext_resource type="PackedScene" uid="uid://512y7wounp3t" path="res://props/bakery/jar_white.tscn" id="2_fqgv2"]
+[ext_resource type="PackedScene" uid="uid://dvg5sxutwj6mf" path="res://props/bakery/jar_yellow.tscn" id="3_ynk5f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wjyah"]
+size = Vector3(0.621643, 1.26086, 0.248047)
+
+[node name="Refrigerator" type="StaticBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_1c5lf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000152588, -0.00457764, -0.00878906)
+shape = SubResource("BoxShape3D_wjyah")
+
+[node name="StaticBody3D" parent="." instance=ExtResource("2_fqgv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0560031)
+
+[node name="StaticBody3D2" parent="." instance=ExtResource("3_ynk5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0902498, 0.387451, -0.045184)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0907102, 0.274722, 0)
+light_color = Color(0.858156, 0.845837, 3.85046e-07, 1)
+light_energy = 0.2
+light_specular = 1.0
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19209e-07, -0.160686, 0)
+light_energy = 0.2
+light_specular = 1.0
+light_bake_mode = 1
+shadow_enabled = true

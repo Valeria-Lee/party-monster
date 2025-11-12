@@ -1,0 +1,166 @@
+[gd_scene load_steps=23 format=3 uid="uid://l5nxfa3eb7sv"]
+
+[ext_resource type="Texture2D" uid="uid://dk7h3owdy0ahs" path="res://assets/img/bakery/lamp.png" id="1_e6b85"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c77nt"]
+atlas = ExtResource("1_e6b85")
+region = Rect2(0, 0, 20, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1rnc"]
+atlas = ExtResource("1_e6b85")
+region = Rect2(20, 0, 20, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3i1w"]
+atlas = ExtResource("1_e6b85")
+region = Rect2(40, 0, 20, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qdpd"]
+atlas = ExtResource("1_e6b85")
+region = Rect2(60, 0, 20, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mt26u"]
+atlas = ExtResource("1_e6b85")
+region = Rect2(80, 0, 20, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71cc2"]
+atlas = ExtResource("1_e6b85")
+region = Rect2(100, 0, 20, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iqkc"]
+atlas = ExtResource("1_e6b85")
+region = Rect2(120, 0, 20, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl8w1"]
+atlas = ExtResource("1_e6b85")
+region = Rect2(140, 0, 20, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw7ig"]
+atlas = ExtResource("1_e6b85")
+region = Rect2(160, 0, 20, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ol01r"]
+atlas = ExtResource("1_e6b85")
+region = Rect2(180, 0, 20, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1p75u"]
+atlas = ExtResource("1_e6b85")
+region = Rect2(200, 0, 20, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aydqo"]
+atlas = ExtResource("1_e6b85")
+region = Rect2(220, 0, 20, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_givcl"]
+atlas = ExtResource("1_e6b85")
+region = Rect2(240, 0, 20, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4qfj"]
+atlas = ExtResource("1_e6b85")
+region = Rect2(260, 0, 20, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdwog"]
+atlas = ExtResource("1_e6b85")
+region = Rect2(280, 0, 20, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n1j3"]
+atlas = ExtResource("1_e6b85")
+region = Rect2(300, 0, 20, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4a4b"]
+atlas = ExtResource("1_e6b85")
+region = Rect2(320, 0, 20, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1arx3"]
+atlas = ExtResource("1_e6b85")
+region = Rect2(340, 0, 20, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44dkw"]
+atlas = ExtResource("1_e6b85")
+region = Rect2(360, 0, 20, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5v08w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c77nt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1rnc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3i1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qdpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mt26u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71cc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iqkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jl8w1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kw7ig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ol01r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1p75u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aydqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_givcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4qfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdwog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4n1j3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4a4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1arx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44dkw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ptxd0"]
+size = Vector3(0.203918, 0.803162, 0.111877)
+
+[node name="Lamp" type="StaticBody3D"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+alpha_antialiasing_mode = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_5v08w")
+autoplay = "default"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00143433, -0.00131226, -0.000152588)
+shape = SubResource("BoxShape3D_ptxd0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.303041, 0.299544)
+light_color = Color(1, 0.760784, 0.027451, 1)
+omni_range = 0.432274

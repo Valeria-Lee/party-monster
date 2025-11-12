@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bxkmudy4104iv"]
+
+[ext_resource type="Script" path="res://inventory/item.gd" id="1_kbgwt"]
+[ext_resource type="Texture2D" uid="uid://c8p54pyw40l13" path="res://assets/img/items/cake_icon.png" id="2_d0yq0"]
+
+[resource]
+script = ExtResource("1_kbgwt")
+name = "cake"
+texture = ExtResource("2_d0yq0")
+isFood = true
+isDeco = false
+price = 6

@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://clmnpnfpcsw1x"]
+
+[ext_resource type="Script" path="res://scripts/tv_announcements.gd" id="1_rb1nd"]
+[ext_resource type="Texture2D" uid="uid://bc3ef33odorpp" path="res://assets/img/bakery/tv_announcements.png" id="1_xqd6i"]
+[ext_resource type="Theme" uid="uid://dtvh5xtqn2e82" path="res://ui/current_theme.tres" id="3_vn4uh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rblht"]
+size = Vector3(0.642303, 0.561768, 0.116699)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fhkwq"]
+viewport_path = NodePath("SubViewport")
+
+[node name="TvAnnouncements" type="StaticBody3D"]
+script = ExtResource("1_rb1nd")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_xqd6i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000961304, 0.00012207, -0.000732422)
+shape = SubResource("BoxShape3D_rblht")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.487391, 0.101825)
+billboard = 1
+double_sided = false
+alpha_cut = 2
+alpha_antialiasing_mode = 1
+texture_filter = 0
+texture = SubResource("ViewportTexture_fhkwq")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(100, 100)
+
+[node name="Control" type="Control" parent="SubViewport"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport/Control"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SubViewport/Control/MarginContainer"]
+clip_contents = false
+layout_mode = 2
+theme = ExtResource("3_vn4uh")
+theme_override_colors/default_color = Color(0.45098, 0.666667, 0.643137, 1)
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+scroll_active = false
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19697, 0.054426)
+light_color = Color(0.972549, 0.54902, 0, 1)
+light_energy = 0.5
+light_indirect_energy = 2.0
+omni_range = 0.8
+omni_attenuation = 0.392292

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqgop0ckuerio"]
+
+[ext_resource type="Texture2D" uid="uid://cdl34mrvbmrdr" path="res://assets/img/supermarket/jars_shelf.png" id="1_82ecm"]
+[ext_resource type="Script" path="res://scripts/jar_shelf.gd" id="1_pvqib"]
+[ext_resource type="Resource" uid="uid://b3nt1e17awnx8" path="res://inventory/collectables/jar.tres" id="2_ic43v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ymg2s"]
+size = Vector3(1.53488, 1.33936, 1.38696)
+
+[node name="JarShelf" type="Area3D"]
+script = ExtResource("1_pvqib")
+item = ExtResource("2_ic43v")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
+texture_filter = 0
+texture = ExtResource("1_82ecm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0104523, 0.0158691, 0.640259)
+shape = SubResource("BoxShape3D_ymg2s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

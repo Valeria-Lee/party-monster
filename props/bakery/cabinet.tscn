@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://weplel3hys7g"]
+
+[ext_resource type="Texture2D" uid="uid://buuriq841qxin" path="res://assets/img/bakery/cabinet1.png" id="1_m7yac"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eu8g1"]
+size = Vector3(0.924316, 0.459961, 0.244629)
+
+[node name="Cabinet" type="StaticBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_m7yac")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00219727, -0.0112305, -0.0100098)
+shape = SubResource("BoxShape3D_eu8g1")

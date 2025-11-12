@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhgqhkr6l1t3h"]
+
+[ext_resource type="Texture2D" uid="uid://bp771nnrgwpv1" path="res://assets/img/bakery/strawberry_bread_tray.png" id="1_460um"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g8r0n"]
+size = Vector3(0.400452, 0.121277, 1)
+
+[node name="StrawberryBreadTray" type="StaticBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_460um")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000457764, 0.000335693, 0)
+shape = SubResource("BoxShape3D_g8r0n")

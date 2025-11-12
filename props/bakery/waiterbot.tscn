@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://ctdgfax8j6kjy"]
+
+[ext_resource type="Texture2D" uid="uid://b6svh7foqnlwi" path="res://assets/img/bakery/waiterbot.png" id="1_3x6l0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl55j"]
+atlas = ExtResource("1_3x6l0")
+region = Rect2(0, 0, 36, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kw1j"]
+atlas = ExtResource("1_3x6l0")
+region = Rect2(36, 0, 36, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wv2je"]
+atlas = ExtResource("1_3x6l0")
+region = Rect2(72, 0, 36, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_neyk6"]
+atlas = ExtResource("1_3x6l0")
+region = Rect2(108, 0, 36, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v131h"]
+atlas = ExtResource("1_3x6l0")
+region = Rect2(144, 0, 36, 92)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7dncg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl55j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kw1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wv2je")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neyk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v131h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w60i3"]
+size = Vector3(0.26799, 0.70752, 0.197693)
+
+[node name="Waiterbot" type="StaticBody3D"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+alpha_antialiasing_mode = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_7dncg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.91821e-05, 0.076416, -0.00326538)
+shape = SubResource("BoxShape3D_w60i3")

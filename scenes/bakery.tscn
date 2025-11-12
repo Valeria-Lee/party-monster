@@ -1,0 +1,351 @@
+[gd_scene load_steps=49 format=3 uid="uid://cjay3xv5i1l56"]
+
+[ext_resource type="PackedScene" uid="uid://cprjb4dxdu0sl" path="res://scenes/environment.tscn" id="1_uiscc"]
+[ext_resource type="PackedScene" uid="uid://dfdmwk6rio6f1" path="res://props/bakery/cart.tscn" id="1_yv45d"]
+[ext_resource type="PackedScene" uid="uid://sl3j82qm4kix" path="res://props/bakery/vitrine.tscn" id="2_bmsjt"]
+[ext_resource type="PackedScene" uid="uid://kjjg88pd5vh6" path="res://inventory/collectables/cake.tscn" id="3_d15t5"]
+[ext_resource type="PackedScene" uid="uid://drms3ewel6okc" path="res://entities/player.tscn" id="4_lp18l"]
+[ext_resource type="PackedScene" uid="uid://dqyth0vgg4txt" path="res://ui/gameplay_ui.tscn" id="5_cuisw"]
+[ext_resource type="Texture2D" uid="uid://bao5n33ye2fxh" path="res://assets/img/bakery/woodfloor.png" id="6_00ahm"]
+[ext_resource type="PackedScene" uid="uid://b1gqfgd4mr8qb" path="res://inventory/collectables/pie.tscn" id="6_dfx1q"]
+[ext_resource type="PackedScene" uid="uid://weplel3hys7g" path="res://props/bakery/cabinet.tscn" id="7_a03nb"]
+[ext_resource type="PackedScene" uid="uid://bgcnnadg3k5ec" path="res://inventory/collectables/cookie.tscn" id="7_gfff1"]
+[ext_resource type="Texture2D" uid="uid://chemhsy1yedry" path="res://assets/img/bakery/backwall.png" id="7_tjuxh"]
+[ext_resource type="Texture2D" uid="uid://bpxgbah2wbre7" path="res://assets/img/bakery/sidewall.png" id="8_ctyb7"]
+[ext_resource type="PackedScene" uid="uid://ix8r5ymxtnmm" path="res://props/bakery/display_case.tscn" id="8_v3npx"]
+[ext_resource type="PackedScene" uid="uid://b35kfo5a3vsuk" path="res://props/bakery/cash_register.tscn" id="9_2ubej"]
+[ext_resource type="Texture2D" uid="uid://cxnxpwtgt2qsy" path="res://assets/img/items/cookie1.png" id="10_000cq"]
+[ext_resource type="Texture2D" uid="uid://bsteotychkmcv" path="res://assets/img/items/cookie2.png" id="11_573am"]
+[ext_resource type="PackedScene" uid="uid://b3avjrd4uvrhv" path="res://inventory/collectables/donut.tscn" id="11_e4j7o"]
+[ext_resource type="Texture2D" uid="uid://ydxdvl6qe2l7" path="res://assets/img/items/cookie3.png" id="12_rpyf2"]
+[ext_resource type="PackedScene" uid="uid://37g8ncmgepvm" path="res://inventory/collectables/cupcake.tscn" id="12_wack0"]
+[ext_resource type="PackedScene" uid="uid://p8ogkav7y3cx" path="res://props/bakery/banner_eye.tscn" id="14_2thgv"]
+[ext_resource type="PackedScene" uid="uid://srt541r1477f" path="res://props/bakery/machine_bowl.tscn" id="15_4wy1x"]
+[ext_resource type="Texture2D" uid="uid://biht06b5v1yia" path="res://assets/img/items/donut_green.png" id="15_jdqit"]
+[ext_resource type="PackedScene" uid="uid://ledn6d6rjdv2" path="res://props/bakery/refrigerator.tscn" id="16_h5feo"]
+[ext_resource type="PackedScene" uid="uid://cilsy5grkdo6o" path="res://props/bakery/oven.tscn" id="17_d5cpt"]
+[ext_resource type="Texture2D" uid="uid://b5ofnjbltx1c7" path="res://assets/img/items/cupcake_pink.png" id="17_xg7y8"]
+[ext_resource type="PackedScene" uid="uid://d3ic6to623je4" path="res://props/bakery/stove.tscn" id="18_bbx63"]
+[ext_resource type="Texture2D" uid="uid://bymft8q54tyan" path="res://assets/img/items/cupcake_yellow.png" id="18_eg3ce"]
+[ext_resource type="PackedScene" uid="uid://crsvfutur6dim" path="res://entities/npcs/chef.tscn" id="18_yygqn"]
+[ext_resource type="PackedScene" uid="uid://jhv07ntulque" path="res://props/bakery/shelf.tscn" id="19_fh0as"]
+[ext_resource type="PackedScene" uid="uid://b4pqx8k6jlckn" path="res://props/bakery/milk_bottle.tscn" id="20_lsp4p"]
+[ext_resource type="PackedScene" uid="uid://d4irnrm7fruwq" path="res://props/bakery/small_milk.tscn" id="21_3c3c0"]
+[ext_resource type="PackedScene" uid="uid://dfy6xv0a3xq0v" path="res://props/bakery/cookie_tray_1.tscn" id="22_6vhjs"]
+[ext_resource type="PackedScene" uid="uid://csgwtad8eom5r" path="res://props/bakery/cookie_tray_2.tscn" id="25_3rsrs"]
+[ext_resource type="PackedScene" uid="uid://dgrpv8usscukd" path="res://props/bakery/table.tscn" id="28_egomc"]
+[ext_resource type="PackedScene" uid="uid://bx51rmx2ofj6u" path="res://props/bakery/bowl.tscn" id="29_jxsfb"]
+[ext_resource type="PackedScene" uid="uid://l5nxfa3eb7sv" path="res://props/bakery/lamp.tscn" id="31_n1d3k"]
+[ext_resource type="PackedScene" uid="uid://ctdgfax8j6kjy" path="res://props/bakery/waiterbot.tscn" id="31_tfy04"]
+[ext_resource type="PackedScene" uid="uid://clmnpnfpcsw1x" path="res://props/bakery/tv_announcements.tscn" id="31_v7ymp"]
+[ext_resource type="PackedScene" uid="uid://cvxdflltpjclh" path="res://props/bakery/ballon_plate.tscn" id="32_ydefo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uyd2f"]
+size = Vector3(8, 0.1, 6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7nqk"]
+albedo_texture = ExtResource("6_00ahm")
+texture_filter = 0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rwn2l"]
+data = PackedVector3Array(-4, 0.05, 3, 4, 0.05, 3, -4, -0.05, 3, 4, 0.05, 3, 4, -0.05, 3, -4, -0.05, 3, 4, 0.05, -3, -4, 0.05, -3, 4, -0.05, -3, -4, 0.05, -3, -4, -0.05, -3, 4, -0.05, -3, 4, 0.05, 3, 4, 0.05, -3, 4, -0.05, 3, 4, 0.05, -3, 4, -0.05, -3, 4, -0.05, 3, -4, 0.05, -3, -4, 0.05, 3, -4, -0.05, -3, -4, 0.05, 3, -4, -0.05, 3, -4, -0.05, -3, 4, 0.05, 3, -4, 0.05, 3, 4, 0.05, -3, -4, 0.05, 3, -4, 0.05, -3, 4, 0.05, -3, -4, -0.05, 3, 4, -0.05, 3, -4, -0.05, -3, 4, -0.05, 3, 4, -0.05, -3, -4, -0.05, -3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_syc4g"]
+transparency = 1
+albedo_texture = ExtResource("7_tjuxh")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_af0ym"]
+material = SubResource("StandardMaterial3D_syc4g")
+size = Vector3(8, 2, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wss2"]
+albedo_texture = ExtResource("8_ctyb7")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_a7n6v"]
+material = SubResource("StandardMaterial3D_6wss2")
+size = Vector3(0.1, 2, 4)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_b0lbn"]
+data = PackedVector3Array(-0.05, 1, 2, 0.05, 1, 2, -0.05, -1, 2, 0.05, 1, 2, 0.05, -1, 2, -0.05, -1, 2, 0.05, 1, -2, -0.05, 1, -2, 0.05, -1, -2, -0.05, 1, -2, -0.05, -1, -2, 0.05, -1, -2, 0.05, 1, 2, 0.05, 1, -2, 0.05, -1, 2, 0.05, 1, -2, 0.05, -1, -2, 0.05, -1, 2, -0.05, 1, -2, -0.05, 1, 2, -0.05, -1, -2, -0.05, 1, 2, -0.05, -1, 2, -0.05, -1, -2, 0.05, 1, 2, -0.05, 1, 2, 0.05, 1, -2, -0.05, 1, 2, -0.05, 1, -2, 0.05, 1, -2, -0.05, -1, 2, 0.05, -1, 2, -0.05, -1, -2, 0.05, -1, 2, 0.05, -1, -2, -0.05, -1, -2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mtm3s"]
+data = PackedVector3Array(-0.05, 1, 2, 0.05, 1, 2, -0.05, -1, 2, 0.05, 1, 2, 0.05, -1, 2, -0.05, -1, 2, 0.05, 1, -2, -0.05, 1, -2, 0.05, -1, -2, -0.05, 1, -2, -0.05, -1, -2, 0.05, -1, -2, 0.05, 1, 2, 0.05, 1, -2, 0.05, -1, 2, 0.05, 1, -2, 0.05, -1, -2, 0.05, -1, 2, -0.05, 1, -2, -0.05, 1, 2, -0.05, -1, -2, -0.05, 1, 2, -0.05, -1, 2, -0.05, -1, -2, 0.05, 1, 2, -0.05, 1, 2, 0.05, 1, -2, -0.05, 1, 2, -0.05, 1, -2, 0.05, 1, -2, -0.05, -1, 2, 0.05, -1, 2, -0.05, -1, -2, 0.05, -1, 2, 0.05, -1, -2, -0.05, -1, -2)
+
+[node name="Bakery" type="Node3D"]
+
+[node name="Environment" parent="." instance=ExtResource("1_uiscc")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="GameplayUI" parent="UI" instance=ExtResource("5_cuisw")]
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="Cart" parent="Props" instance=ExtResource("1_yv45d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.376525, -1.96084)
+
+[node name="Vitrine" parent="Props" instance=ExtResource("2_bmsjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.922301, -1.96484)
+
+[node name="Cabinet" parent="Props" instance=ExtResource("7_a03nb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19734, 0.393918, -2.25893)
+
+[node name="DisplayCase" parent="Props" instance=ExtResource("8_v3npx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42933, 0.343372, -2.03791)
+
+[node name="Vitrine2" parent="Props" instance=ExtResource("2_bmsjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43288, 0.822751, -2.02399)
+
+[node name="CashRegister" parent="Props" instance=ExtResource("9_2ubej")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.71788, 0.7, -2.047)
+
+[node name="Collectables" type="Node3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.563622)
+
+[node name="Cake" parent="Props/Collectables" instance=ExtResource("3_d15t5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.874499, -1.4956)
+
+[node name="Pie" parent="Props/Collectables" instance=ExtResource("6_dfx1q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41788, 0.706141, -1.52459)
+
+[node name="Cookie" parent="Props/Collectables" instance=ExtResource("7_gfff1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.27923, 0.784068, -1.70316)
+
+[node name="Donut" parent="Props/Collectables" instance=ExtResource("11_e4j7o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.36623, 0.7, -1.65)
+
+[node name="Cupcake" parent="Props/Collectables" instance=ExtResource("12_wack0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.778, 0.76, -1.611)
+
+[node name="DecoItems" type="Node3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.563622)
+
+[node name="Cookies" type="Node3D" parent="Props/DecoItems"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0316554, -0.113184)
+
+[node name="Cookie1" type="Sprite3D" parent="Props/DecoItems/Cookies"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04543, 0.256184, -1.56914)
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("10_000cq")
+
+[node name="Cookie5" type="Sprite3D" parent="Props/DecoItems/Cookies"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31368, 0.48675, -1.56914)
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("10_000cq")
+
+[node name="Cookie6" type="Sprite3D" parent="Props/DecoItems/Cookies"]
+transform = Transform3D(0.999785, -0.0207156, 0, 0.0207156, 0.999785, 0, 0, 0, 1, 1.06442, 0.805531, -1.60098)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("10_000cq")
+
+[node name="Cookie7" type="Sprite3D" parent="Props/DecoItems/Cookies"]
+transform = Transform3D(0.999785, -0.0207156, 0, 0.0207156, 0.999785, 0, 0, 0, 1, 1.1478, 0.925377, -1.5931)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("10_000cq")
+
+[node name="Cookie2" type="Sprite3D" parent="Props/DecoItems/Cookies"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19867, 0.242944, -1.54405)
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("11_573am")
+
+[node name="Cookie4" type="Sprite3D" parent="Props/DecoItems/Cookies"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35258, 0.255321, -1.54405)
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("11_573am")
+
+[node name="Cookie3" type="Sprite3D" parent="Props/DecoItems/Cookies"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10158, 0.485566, -1.56476)
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("12_rpyf2")
+
+[node name="Others" type="Node3D" parent="Props/DecoItems"]
+
+[node name="Donut" type="Sprite3D" parent="Props/DecoItems/Others"]
+transform = Transform3D(0.787043, -0.616899, 0, 0.616899, 0.787043, 0, 0, 0, 1, 3.11775, 0.774427, -1.52053)
+shaded = true
+alpha_antialiasing_mode = 2
+texture_filter = 0
+texture = ExtResource("15_jdqit")
+
+[node name="Cupcake" type="Sprite3D" parent="Props/DecoItems/Others"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85253, 0.20337, -1.55953)
+billboard = 1
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("17_xg7y8")
+
+[node name="Cupcake2" type="Sprite3D" parent="Props/DecoItems/Others"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55073, 0.444805, -1.55953)
+billboard = 1
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("17_xg7y8")
+
+[node name="Cupcake3" type="Sprite3D" parent="Props/DecoItems/Others"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95983, 0.444805, -1.55953)
+billboard = 1
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("18_eg3ce")
+
+[node name="BackgroundDeco" type="Node3D" parent="Props"]
+
+[node name="BannerEye" parent="Props/BackgroundDeco" instance=ExtResource("14_2thgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.419224, 0.959314, -3.62472)
+
+[node name="Cart2" parent="Props/BackgroundDeco" instance=ExtResource("1_yv45d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.387985, -2.92934)
+
+[node name="MachineBowl" parent="Props/BackgroundDeco" instance=ExtResource("15_4wy1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.947378, -2.92061)
+
+[node name="Refrigerator" parent="Props/BackgroundDeco" instance=ExtResource("16_h5feo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.27332, 0.708277, -3.79674)
+
+[node name="Oven" parent="Props/BackgroundDeco" instance=ExtResource("17_d5cpt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47487, 0.622827, -3.07608)
+
+[node name="Stove" parent="Props/BackgroundDeco" instance=ExtResource("18_bbx63")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.39839, 0.409925, -3.49747)
+
+[node name="MilkBottle" parent="Props/BackgroundDeco" instance=ExtResource("20_lsp4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.549424, 1.35253, -3.80181)
+
+[node name="SmallMilk" parent="Props/BackgroundDeco" instance=ExtResource("21_3c3c0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.812519, 1.3095, -3.78754)
+
+[node name="Shelf" parent="Props/BackgroundDeco" instance=ExtResource("19_fh0as")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67625, 1.07269, -3.78754)
+
+[node name="CookieTray1" parent="Props/BackgroundDeco" instance=ExtResource("22_6vhjs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22101, 1.28199, -3.81821)
+
+[node name="Shelf2" parent="Props/BackgroundDeco" instance=ExtResource("19_fh0as")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22101, 1.13248, -3.81821)
+
+[node name="Table" parent="Props/BackgroundDeco" instance=ExtResource("28_egomc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.723918, 0.343765, -2.56812)
+
+[node name="Bowl" parent="Props/BackgroundDeco/Table" instance=ExtResource("29_jxsfb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.413441, 0)
+
+[node name="Table2" parent="Props/BackgroundDeco" instance=ExtResource("28_egomc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.814474, 0.34729, -2.3635)
+
+[node name="CookieTray2" parent="Props/BackgroundDeco/Table2" instance=ExtResource("25_3rsrs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.339021, 0)
+
+[node name="Table" parent="Props" instance=ExtResource("28_egomc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.298, 0.338, -2.2)
+
+[node name="Vitrine3" parent="Props" instance=ExtResource("2_bmsjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2873, 0.83165, -2.21384)
+
+[node name="Cabinet2" parent="Props" instance=ExtResource("7_a03nb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.745, 0.328, -2.18)
+
+[node name="Waiterbot" parent="Props" instance=ExtResource("31_tfy04")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25356, 0.5, -0.940179)
+
+[node name="BallonPlate" parent="Props" instance=ExtResource("32_ydefo")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.2, -1.169)
+
+[node name="TvAnnouncements" parent="Props" instance=ExtResource("31_v7ymp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45854, 1.46038, -2.36908)
+
+[node name="Building" type="Node3D" parent="."]
+
+[node name="Floor" type="MeshInstance3D" parent="Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.89118)
+mesh = SubResource("BoxMesh_uyd2f")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_l7nqk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/Floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_rwn2l")
+
+[node name="Roof" type="MeshInstance3D" parent="Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99667, -1.8264)
+mesh = SubResource("BoxMesh_uyd2f")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_l7nqk")
+
+[node name="BackWall" type="MeshInstance3D" parent="Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01406, -3.95025)
+mesh = SubResource("BoxMesh_af0ym")
+
+[node name="LeftWall" type="MeshInstance3D" parent="Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.96672, 1.01117, -1.87641)
+mesh = SubResource("BoxMesh_a7n6v")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Building/LeftWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/LeftWall/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_b0lbn")
+
+[node name="RightWall" type="MeshInstance3D" parent="Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.93554, 0.974608, -1.93406)
+mesh = SubResource("BoxMesh_a7n6v")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Building/RightWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/RightWall/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_mtm3s")
+
+[node name="Light" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44132, -1.17461)
+light_color = Color(0.845496, 0.61286, 1.92523e-06, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Light"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.112425, 0.928571, -2.12025)
+light_color = Color(0.576471, 0.976471, 0.858824, 1)
+light_energy = 0.5
+omni_range = 2.0
+omni_attenuation = 0.574349
+
+[node name="Lamp" parent="Light" instance=ExtResource("31_n1d3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.611, 1.546, -1)
+
+[node name="Lamp2" parent="Light" instance=ExtResource("31_n1d3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38687, 1.55188, -1.09534)
+
+[node name="Lamp3" parent="Light" instance=ExtResource("31_n1d3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.524, -1.9)
+
+[node name="Entities" type="Node3D" parent="."]
+
+[node name="Chef" parent="Entities" instance=ExtResource("18_yygqn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.436, 0.717671, -2.36185)
+
+[node name="Player" parent="Entities" instance=ExtResource("4_lp18l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17263, 0.728093, -1.49822)

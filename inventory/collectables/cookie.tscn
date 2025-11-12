@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgcnnadg3k5ec"]
+
+[ext_resource type="Texture2D" uid="uid://cxnxpwtgt2qsy" path="res://assets/img/items/cookie1.png" id="1_5a2v0"]
+[ext_resource type="Script" path="res://scripts/cookie.gd" id="1_wyty4"]
+[ext_resource type="Resource" uid="uid://d03mkyk024na6" path="res://inventory/collectables/cookie.tres" id="2_o70xo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lh1fi"]
+
+[node name="Cookie" type="Area3D"]
+script = ExtResource("1_wyty4")
+item = ExtResource("2_o70xo")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_5a2v0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_lh1fi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

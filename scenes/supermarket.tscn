@@ -1,0 +1,163 @@
+[gd_scene load_steps=25 format=3 uid="uid://3anvae8ohlok"]
+
+[ext_resource type="PackedScene" uid="uid://cprjb4dxdu0sl" path="res://scenes/environment.tscn" id="1_netim"]
+[ext_resource type="PackedScene" uid="uid://dqyth0vgg4txt" path="res://ui/gameplay_ui.tscn" id="2_7ve4e"]
+[ext_resource type="Texture2D" uid="uid://cssxhmnd2vtra" path="res://assets/img/supermarket/floor.png" id="3_nog5p"]
+[ext_resource type="Texture2D" uid="uid://c08vxfftxm58c" path="res://assets/img/supermarket/backwal_superl.png" id="4_601ng"]
+[ext_resource type="Texture2D" uid="uid://b5odhtshiaxgb" path="res://assets/img/supermarket/sidewal_supermarketl.png" id="5_ab5hg"]
+[ext_resource type="Texture2D" uid="uid://bd7ct6myvbhgd" path="res://assets/img/supermarket/green_tubesl.png" id="6_8yshy"]
+[ext_resource type="PackedScene" uid="uid://drms3ewel6okc" path="res://entities/player.tscn" id="6_eqwgr"]
+[ext_resource type="Texture2D" uid="uid://b2in8t15074ko" path="res://assets/img/supermarket/red_tubesl.png" id="7_df6go"]
+[ext_resource type="PackedScene" uid="uid://cnj13hpn5fuqc" path="res://inventory/collectables/chip_shelf.tscn" id="8_gngyn"]
+[ext_resource type="PackedScene" uid="uid://db6h6q8omx4m7" path="res://props/supermarket/light.tscn" id="8_p00p1"]
+[ext_resource type="PackedScene" uid="uid://bgc5nb8cuy503" path="res://props/supermarket/sodas_refrigerator.tscn" id="9_r3226"]
+[ext_resource type="PackedScene" uid="uid://cqgop0ckuerio" path="res://props/supermarket/jar_shelf.tscn" id="10_rmsmh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t5218"]
+size = Vector3(8, 0.1, 6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2kl5v"]
+albedo_texture = ExtResource("3_nog5p")
+uv1_scale = Vector3(3, 4, 1)
+texture_filter = 0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sif0u"]
+data = PackedVector3Array(-4, 0.05, 3, 4, 0.05, 3, -4, -0.05, 3, 4, 0.05, 3, 4, -0.05, 3, -4, -0.05, 3, 4, 0.05, -3, -4, 0.05, -3, 4, -0.05, -3, -4, 0.05, -3, -4, -0.05, -3, 4, -0.05, -3, 4, 0.05, 3, 4, 0.05, -3, 4, -0.05, 3, 4, 0.05, -3, 4, -0.05, -3, 4, -0.05, 3, -4, 0.05, -3, -4, 0.05, 3, -4, -0.05, -3, -4, 0.05, 3, -4, -0.05, 3, -4, -0.05, -3, 4, 0.05, 3, -4, 0.05, 3, 4, 0.05, -3, -4, 0.05, 3, -4, 0.05, -3, 4, 0.05, -3, -4, -0.05, 3, 4, -0.05, 3, -4, -0.05, -3, 4, -0.05, 3, 4, -0.05, -3, -4, -0.05, -3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xqqc"]
+transparency = 1
+albedo_texture = ExtResource("4_601ng")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_4d7jo"]
+material = SubResource("StandardMaterial3D_3xqqc")
+size = Vector3(8, 2, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pyhyb"]
+albedo_texture = ExtResource("5_ab5hg")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_4dxrx"]
+material = SubResource("StandardMaterial3D_pyhyb")
+size = Vector3(0.1, 2, 4)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ah3rq"]
+data = PackedVector3Array(-0.05, 1, 2, 0.05, 1, 2, -0.05, -1, 2, 0.05, 1, 2, 0.05, -1, 2, -0.05, -1, 2, 0.05, 1, -2, -0.05, 1, -2, 0.05, -1, -2, -0.05, 1, -2, -0.05, -1, -2, 0.05, -1, -2, 0.05, 1, 2, 0.05, 1, -2, 0.05, -1, 2, 0.05, 1, -2, 0.05, -1, -2, 0.05, -1, 2, -0.05, 1, -2, -0.05, 1, 2, -0.05, -1, -2, -0.05, 1, 2, -0.05, -1, 2, -0.05, -1, -2, 0.05, 1, 2, -0.05, 1, 2, 0.05, 1, -2, -0.05, 1, 2, -0.05, 1, -2, 0.05, 1, -2, -0.05, -1, 2, 0.05, -1, 2, -0.05, -1, -2, 0.05, -1, 2, 0.05, -1, -2, -0.05, -1, -2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jxuve"]
+data = PackedVector3Array(-0.05, 1, 2, 0.05, 1, 2, -0.05, -1, 2, 0.05, 1, 2, 0.05, -1, 2, -0.05, -1, 2, 0.05, 1, -2, -0.05, 1, -2, 0.05, -1, -2, -0.05, 1, -2, -0.05, -1, -2, 0.05, -1, -2, 0.05, 1, 2, 0.05, 1, -2, 0.05, -1, 2, 0.05, 1, -2, 0.05, -1, -2, 0.05, -1, 2, -0.05, 1, -2, -0.05, 1, 2, -0.05, -1, -2, -0.05, 1, 2, -0.05, -1, 2, -0.05, -1, -2, 0.05, 1, 2, -0.05, 1, 2, 0.05, 1, -2, -0.05, 1, 2, -0.05, 1, -2, 0.05, 1, -2, -0.05, -1, 2, 0.05, -1, 2, -0.05, -1, -2, 0.05, -1, 2, 0.05, -1, -2, -0.05, -1, -2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bmrku"]
+size = Vector3(8, 2, 0.02)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fhiaa"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+albedo_color = Color(1.29, 1.5, 1.325, 1)
+albedo_texture = ExtResource("6_8yshy")
+emission_enabled = true
+emission = Color(2.23808e-06, 0.490135, 0, 1)
+emission_energy_multiplier = 3.0
+uv1_scale = Vector3(2.8, 2, 1)
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnluy"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+albedo_color = Color(1.29, 2, 1.325, 1)
+albedo_texture = ExtResource("7_df6go")
+emission_enabled = true
+emission = Color(0.842634, 5.87195e-06, 4.81307e-07, 1)
+emission_energy_multiplier = 3.0
+uv1_scale = Vector3(2.8, 2, 1)
+texture_filter = 0
+
+[node name="Supermarket" type="Node3D"]
+
+[node name="Environment" parent="." instance=ExtResource("1_netim")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="GameplayUI" parent="UI" instance=ExtResource("2_7ve4e")]
+
+[node name="Building" type="Node3D" parent="."]
+
+[node name="Floor" type="MeshInstance3D" parent="Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000123024, -0.00937653, -1.89024)
+mesh = SubResource("BoxMesh_t5218")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_2kl5v")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/Floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_sif0u")
+
+[node name="Roof" type="MeshInstance3D" parent="Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.91136, -1.8264)
+mesh = SubResource("BoxMesh_t5218")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_2kl5v")
+
+[node name="BackWall" type="MeshInstance3D" parent="Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01406, -3.95025)
+mesh = SubResource("BoxMesh_4d7jo")
+
+[node name="LeftWall" type="MeshInstance3D" parent="Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.96672, 1.01117, -1.87641)
+mesh = SubResource("BoxMesh_4dxrx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Building/LeftWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/LeftWall/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ah3rq")
+
+[node name="RightWall" type="MeshInstance3D" parent="Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.93554, 0.974608, -1.93406)
+mesh = SubResource("BoxMesh_4dxrx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Building/RightWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/RightWall/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_jxuve")
+
+[node name="GreenTubes" type="MeshInstance3D" parent="Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.894284, -3.71)
+mesh = SubResource("BoxMesh_bmrku")
+surface_material_override/0 = SubResource("StandardMaterial3D_fhiaa")
+
+[node name="RedTubes" type="MeshInstance3D" parent="Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0685682, 0.851433, -3.888)
+mesh = SubResource("BoxMesh_bmrku")
+surface_material_override/0 = SubResource("StandardMaterial3D_wnluy")
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="ChipShelf" parent="Props" instance=ExtResource("8_gngyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67796, 0.604902, -1.70169)
+
+[node name="SodasRefrigerator" parent="Props" instance=ExtResource("9_r3226")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.290962, 0.904, -1.8)
+
+[node name="JarShelf" parent="Props" instance=ExtResource("10_rmsmh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13064, 0.741757, -1.599)
+
+[node name="Light" type="Node3D" parent="."]
+
+[node name="Light" parent="Light" instance=ExtResource("8_p00p1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62754, 1.64187, -1.55941)
+
+[node name="Light2" parent="Light" instance=ExtResource("8_p00p1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03842, 1.64187, -1.55941)
+
+[node name="Light3" parent="Light" instance=ExtResource("8_p00p1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34696, 1.64187, -2.59999)
+
+[node name="Player" parent="." instance=ExtResource("6_eqwgr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74, -1)
+
+[node name="Entities" type="Node3D" parent="."]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3avjrd4uvrhv"]
+
+[ext_resource type="Texture2D" uid="uid://ch5le7m618nqq" path="res://assets/img/items/donut_pink.png" id="1_5rwpy"]
+[ext_resource type="Script" path="res://scripts/donut.gd" id="1_6koum"]
+[ext_resource type="Resource" uid="uid://cilsa05anhi8d" path="res://inventory/collectables/donut.tres" id="2_68i5y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_57w8j"]
+size = Vector3(0.684448, 1, 1.24164)
+
+[node name="Donut" type="Area3D"]
+script = ExtResource("1_6koum")
+item = ExtResource("2_68i5y")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+alpha_antialiasing_mode = 2
+texture_filter = 0
+texture = ExtResource("1_5rwpy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00189209, 0, -0.000823975)
+shape = SubResource("BoxShape3D_57w8j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

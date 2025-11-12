@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://p8ogkav7y3cx"]
+
+[ext_resource type="Texture2D" uid="uid://cxmdmm4ryk5nv" path="res://assets/img/bakery/banner_eye.png" id="1_atnjs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfjyf"]
+atlas = ExtResource("1_atnjs")
+region = Rect2(0, 0, 48, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s60my"]
+atlas = ExtResource("1_atnjs")
+region = Rect2(48, 0, 48, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgrcj"]
+atlas = ExtResource("1_atnjs")
+region = Rect2(96, 0, 48, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akfuq"]
+atlas = ExtResource("1_atnjs")
+region = Rect2(144, 0, 48, 88)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_08iju"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfjyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s60my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgrcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akfuq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c3qno"]
+size = Vector3(0.476013, 0.206055, 0.296509)
+
+[node name="BannerEye" type="StaticBody3D"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_08iju")
+autoplay = "default"
+frame = 2
+frame_progress = 0.475728
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0027771, 0.396973, -0.00274658)
+shape = SubResource("BoxShape3D_c3qno")

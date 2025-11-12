@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1gqfgd4mr8qb"]
+
+[ext_resource type="Script" path="res://scripts/pie.gd" id="1_c6xup"]
+[ext_resource type="Texture2D" uid="uid://c62tpjupspqd1" path="res://assets/img/items/pie.png" id="1_vo8ki"]
+[ext_resource type="Resource" uid="uid://qym0umr55a0f" path="res://inventory/collectables/pie.tres" id="2_n8hkf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3mr2w"]
+size = Vector3(0.625061, 1, 1)
+
+[node name="Pie" type="Area3D"]
+script = ExtResource("1_c6xup")
+item = ExtResource("2_n8hkf")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_vo8ki")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00479126, 0, 0)
+shape = SubResource("BoxShape3D_3mr2w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4pxremh5lkye"]
+
+[ext_resource type="Texture2D" uid="uid://78v6166wn354" path="res://assets/img/bakery/tray_bread_making.png" id="1_gqaee"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jkgdu"]
+size = Vector3(0.388809, 0.0625, 1)
+
+[node name="BreadMakingTray" type="StaticBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_gqaee")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007164, -0.00488281, 0)
+shape = SubResource("BoxShape3D_jkgdu")

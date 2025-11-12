@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://512y7wounp3t"]
+
+[ext_resource type="Texture2D" uid="uid://btmflx8aro0ev" path="res://assets/img/bakery/jar_white.png" id="1_iooi7"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_eqdu5"]
+height = 0.242206
+radius = 0.0869508
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_iooi7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00749156, 0)
+shape = SubResource("CylinderShape3D_eqdu5")

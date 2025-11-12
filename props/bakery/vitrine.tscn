@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://sl3j82qm4kix"]
+
+[ext_resource type="Texture2D" uid="uid://bkxaormlm58uv" path="res://assets/img/bakery/vitrine1.png" id="1_ljn3h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8jcju"]
+size = Vector3(0.600159, 0.392334, 0.0513306)
+
+[node name="Vitrine" type="StaticBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_ljn3h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000823975, -0.0218506, 0.000823975)
+shape = SubResource("BoxShape3D_8jcju")

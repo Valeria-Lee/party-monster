@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://cg7qttvtdgah0"]
+
+[ext_resource type="PackedScene" uid="uid://cprjb4dxdu0sl" path="res://scenes/environment.tscn" id="1_lya7o"]
+[ext_resource type="PackedScene" uid="uid://drms3ewel6okc" path="res://entities/player.tscn" id="2_bugvb"]
+[ext_resource type="PackedScene" uid="uid://d1poog55kb4r" path="res://props/yellowbot.tscn" id="2_sda5o"]
+[ext_resource type="PackedScene" uid="uid://cobpheco67ups" path="res://props/red_poster.tscn" id="3_jbifa"]
+[ext_resource type="PackedScene" uid="uid://dqyth0vgg4txt" path="res://ui/gameplay_ui.tscn" id="5_gx56i"]
+[ext_resource type="PackedScene" uid="uid://kjjg88pd5vh6" path="res://inventory/collectables/cake.tscn" id="6_10wl8"]
+[ext_resource type="PackedScene" uid="uid://b8874xnke6mbp" path="res://test/dummie.tscn" id="7_h520o"]
+[ext_resource type="PackedScene" uid="uid://crsvfutur6dim" path="res://entities/npcs/chef.tscn" id="8_45ubl"]
+
+[node name="Test" type="Node3D"]
+
+[node name="Environment" parent="." instance=ExtResource("1_lya7o")]
+
+[node name="Boxes" type="Node3D" parent="."]
+
+[node name="Plane" type="CSGBox3D" parent="Boxes"]
+size = Vector3(16, 0.1, 8)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Boxes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53799, 0.55, -1.35648)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Boxes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.723, 0.55, -2.712)
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="Yellowbot" parent="Props" instance=ExtResource("2_sda5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.155, 0.55, 0.669)
+
+[node name="RedPoster" parent="Props" instance=ExtResource("3_jbifa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78428, 1.06302, -1.16683)
+
+[node name="Player" parent="." instance=ExtResource("2_bugvb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="GameplayUI" parent="UI" instance=ExtResource("5_gx56i")]
+
+[node name="Collectables" type="Node3D" parent="."]
+
+[node name="Cake" parent="Collectables" instance=ExtResource("6_10wl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3434, 0.89912, -0.2063)
+
+[node name="Dummie" parent="." instance=ExtResource("7_h520o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29145, 0.634183, 0)
+
+[node name="Chef" parent="." instance=ExtResource("8_45ubl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84944, 0.744741, 0)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8874xnke6mbp"]
+
+[ext_resource type="Texture2D" uid="uid://btec2odqeo0e3" path="res://assets/img/characters/placeholder_player.png" id="1_47pmc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jdhtw"]
+radius = 0.160706
+height = 1.01115
+
+[node name="Dummie" type="CharacterBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_47pmc")
+hframes = 10
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_jdhtw")

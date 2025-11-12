@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://37g8ncmgepvm"]
+
+[ext_resource type="Texture2D" uid="uid://bymft8q54tyan" path="res://assets/img/items/cupcake_yellow.png" id="1_fgh6g"]
+[ext_resource type="Script" path="res://scripts/cupcake.gd" id="1_nq6u3"]
+[ext_resource type="Resource" uid="uid://dcqhjlxbeog21" path="res://inventory/collectables/cupcake.tres" id="2_07fvk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fswp2"]
+size = Vector3(0.520935, 1, 1)
+
+[node name="Cupcake" type="Area3D"]
+script = ExtResource("1_nq6u3")
+item = ExtResource("2_07fvk")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+alpha_antialiasing_mode = 2
+texture_filter = 0
+texture = ExtResource("1_fgh6g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000823975, 0, 0)
+shape = SubResource("BoxShape3D_fswp2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

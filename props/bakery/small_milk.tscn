@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4irnrm7fruwq"]
+
+[ext_resource type="Texture2D" uid="uid://bn8vapuljb5yp" path="res://assets/img/bakery/small_milk_bottle.png" id="1_r0i45"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b3hje"]
+size = Vector3(0.20047, 0.324829, 0.138672)
+
+[node name="SmallMilk" type="StaticBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_r0i45")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000320435, 0.0010376, -0.000976562)
+shape = SubResource("BoxShape3D_b3hje")

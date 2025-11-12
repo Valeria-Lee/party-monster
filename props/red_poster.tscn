@@ -1,0 +1,126 @@
+[gd_scene load_steps=18 format=3 uid="uid://cobpheco67ups"]
+
+[ext_resource type="Texture2D" uid="uid://df27wa3sjg08" path="res://assets/img/props/poster_redmachine-sheet.png" id="1_8hulu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12nn1"]
+atlas = ExtResource("1_8hulu")
+region = Rect2(0, 0, 112, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhl6g"]
+atlas = ExtResource("1_8hulu")
+region = Rect2(112, 0, 112, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i4ho"]
+atlas = ExtResource("1_8hulu")
+region = Rect2(224, 0, 112, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gbk3"]
+atlas = ExtResource("1_8hulu")
+region = Rect2(336, 0, 112, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tsma"]
+atlas = ExtResource("1_8hulu")
+region = Rect2(448, 0, 112, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqumu"]
+atlas = ExtResource("1_8hulu")
+region = Rect2(560, 0, 112, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48pgf"]
+atlas = ExtResource("1_8hulu")
+region = Rect2(672, 0, 112, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eia18"]
+atlas = ExtResource("1_8hulu")
+region = Rect2(784, 0, 112, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4ld1"]
+atlas = ExtResource("1_8hulu")
+region = Rect2(896, 0, 112, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkxkh"]
+atlas = ExtResource("1_8hulu")
+region = Rect2(1008, 0, 112, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwaew"]
+atlas = ExtResource("1_8hulu")
+region = Rect2(1120, 0, 112, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p124"]
+atlas = ExtResource("1_8hulu")
+region = Rect2(1232, 0, 112, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bi00a"]
+atlas = ExtResource("1_8hulu")
+region = Rect2(1344, 0, 112, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvc2f"]
+atlas = ExtResource("1_8hulu")
+region = Rect2(1456, 0, 112, 124)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ygm0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12nn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhl6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3i4ho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gbk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tsma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqumu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48pgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eia18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4ld1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkxkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwaew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5p124")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bi00a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvc2f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ab5tn"]
+size = Vector3(0.826569, 0.535889, 0.221985)
+
+[node name="RedPoster" type="StaticBody3D"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_7ygm0")
+autoplay = "default"
+frame_progress = 0.762881
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0063324, -0.246948, 0.0187683)
+shape = SubResource("BoxShape3D_ab5tn")

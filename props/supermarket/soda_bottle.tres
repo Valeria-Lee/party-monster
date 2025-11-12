@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dxg5n44lt4ivi"]
+
+[ext_resource type="Script" path="res://inventory/item.gd" id="1_bgoro"]
+[ext_resource type="Texture2D" uid="uid://l616lg30bmcu" path="res://assets/img/supermarket/soda_bottle.png" id="2_37ufo"]
+
+[resource]
+script = ExtResource("1_bgoro")
+name = "Soda"
+texture = ExtResource("2_37ufo")
+isFood = true
+isDeco = false
+price = 16
