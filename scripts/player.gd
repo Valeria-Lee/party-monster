@@ -17,8 +17,8 @@ func _physics_process(delta):
 	
 	play_anim(input)
 	
-	if velocity.x != 0:
-		add_walking_particles()
+	#if velocity.x != 0:
+	#	add_walking_particles()
 	
 	move_and_slide()
 
@@ -34,10 +34,12 @@ func play_anim(dir:int):
 		anim.play("idle")
 		just_stop_walking = true
 
+'''
 func add_walking_particles():
 	if just_stop_walking:
-		walking_particles.emitting = true
+		# walking_particles.emitting = true
 		just_stop_walking = false
+'''
 
 func collect_item(item:Item):
 	if Money.money - item.price >= 0:

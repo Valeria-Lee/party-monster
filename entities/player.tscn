@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://drms3ewel6okc"]
+[gd_scene load_steps=26 format=3 uid="uid://drms3ewel6okc"]
 
 [ext_resource type="Script" uid="uid://cj4yft851y7p2" path="res://scripts/player.gd" id="1_rd0qj"]
 [ext_resource type="Texture2D" uid="uid://c11nc10tfl8vj" path="res://assets/img/characters/player_walking.png" id="3_1gmw3"]
@@ -161,23 +161,6 @@ animations = [{
 radius = 0.272797
 height = 1.16533
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e4p34"]
-transparency = 1
-diffuse_mode = 3
-specular_mode = 1
-albedo_color = Color(0.435192, 0.435192, 0.435192, 1)
-metallic_specular = 0.2
-roughness = 0.5
-
-[sub_resource type="SphereMesh" id="SphereMesh_e4p34"]
-material = SubResource("StandardMaterial3D_e4p34")
-radius = 0.1
-height = 0.2
-
-[sub_resource type="Gradient" id="Gradient_e4p34"]
-offsets = PackedFloat32Array(0.00408163, 1)
-colors = PackedColorArray(0.165656, 0.165656, 0.165656, 1, 0.779291, 0.779291, 0.779291, 1)
-
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_rd0qj")
 
@@ -193,20 +176,3 @@ shape = SubResource("CapsuleShape3D_sg3r0")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0.4, 1.2)
-
-[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.551, 0.1)
-emitting = false
-lifetime = 0.6
-one_shot = true
-explosiveness = 0.2
-randomness = 0.8
-mesh = SubResource("SphereMesh_e4p34")
-emission_shape = 3
-emission_box_extents = Vector3(0.1, 0.05, 0.1)
-spread = 30.0
-gravity = Vector3(0, 1.4, 0)
-scale_amount_min = 0.4
-color_ramp = SubResource("Gradient_e4p34")
-hue_variation_min = 0.5
-hue_variation_max = 1.0
