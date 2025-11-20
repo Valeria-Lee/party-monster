@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhr8a25mgvr4b"]
+
+[ext_resource type="Script" uid="uid://8xnpcfahd4ro" path="res://scripts/typing__game.gd" id="1_00bqj"]
+[ext_resource type="FontFile" uid="uid://c6akjplo8upcq" path="res://assets/font/FiraCode-Medium.ttf" id="2_o2ncx"]
+[ext_resource type="Theme" uid="uid://ppjhskob2psu" path="res://scenes/typing_ game.tres" id="3_o2ncx"]
+
+[sub_resource type="Theme" id="Theme_00bqj"]
+default_font = ExtResource("2_o2ncx")
+default_font_size = 40
+
+[node name="TypingGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_00bqj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UIRoot" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UIRoot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GameTitle" type="Label" parent="CanvasLayer/UIRoot"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -133.0
+offset_top = 28.0
+offset_right = 133.0
+offset_bottom = 96.0
+grow_horizontal = 2
+theme = SubResource("Theme_00bqj")
+theme_override_colors/font_color = Color(0.5397813, 0.773703, 0.17267174, 1)
+text = "Typing game"
+
+[node name="TargetTextContainer" type="MarginContainer" parent="CanvasLayer/UIRoot"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.50600004
+anchor_right = 0.5
+anchor_bottom = 0.50600004
+offset_left = -473.0
+offset_top = -201.88803
+offset_right = 473.0
+offset_bottom = 202.11197
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TargetText" type="RichTextLabel" parent="CanvasLayer/UIRoot/TargetTextContainer"]
+layout_mode = 2
+theme = ExtResource("3_o2ncx")
+theme_override_colors/default_color = Color(0.6281089, 0.70495063, 0.54842114, 1)
+theme_override_constants/line_separation = 10
+text = "Computer science isn't about computers, much like astronomy isn't about telescopes. The computer was born to solve problems that did not exist before. One machine can do the work of fifty ordinary men. No machine can do the work of one extraordinary man"
+
+[node name="TextEditContainer" type="MarginContainer" parent="CanvasLayer/UIRoot"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -478.0
+offset_top = -210.0
+offset_right = 485.0
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/UIRoot/TextEditContainer"]
+layout_mode = 2
+theme = ExtResource("3_o2ncx")
+theme_override_colors/font_color = Color(0.6627451, 0.9372549, 0.24705882, 1)
+theme_override_constants/caret_width = 1
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = 10
+wrap_mode = 1
+caret_blink = true
+caret_blink_interval = 0.7

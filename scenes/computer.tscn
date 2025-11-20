@@ -90,20 +90,19 @@ columns = 2
 [node name="InputAppButton" type="Button" parent="CanvasLayer/UIRoot/Bar/GridContainer"]
 layout_mode = 2
 tooltip_text = "INPUT TERMINAL"
-theme_override_styles/hover = ExtResource("4_bvtkm")
 theme_override_styles/normal = ExtResource("4_bvtkm")
+theme_override_styles/hover = ExtResource("4_bvtkm")
 icon = ExtResource("8_s8wx6")
 
 [node name="DisplayAppButton" type="Button" parent="CanvasLayer/UIRoot/Bar/GridContainer"]
 layout_mode = 2
 tooltip_text = "DISPLAY TERMINAL"
-theme_override_styles/hover = ExtResource("4_bvtkm")
 theme_override_styles/normal = ExtResource("4_bvtkm")
+theme_override_styles/hover = ExtResource("4_bvtkm")
 icon = ExtResource("9_01el2")
 
 [node name="InputConsole" type="Control" parent="CanvasLayer/UIRoot"]
 custom_minimum_size = Vector2(576, 324)
-layout_mode = 3
 anchors_preset = 0
 offset_right = 576.0
 offset_bottom = 324.0
@@ -165,6 +164,7 @@ theme_override_colors/background_color = Color(0, 0.629075, 0.454695, 0.129412)
 placeholder_text = ">>"
 
 [node name="DisplayConsole" type="Control" parent="CanvasLayer/UIRoot"]
+visible = false
 custom_minimum_size = Vector2(576, 324)
 layout_mode = 1
 anchors_preset = 15
@@ -180,17 +180,17 @@ grow_vertical = 2
 [node name="ConsoleBG" type="TextureRect" parent="CanvasLayer/UIRoot/DisplayConsole"]
 layout_mode = 0
 offset_left = 1.0
-offset_top = 1.0
+offset_top = -2.0
 offset_right = 577.0
-offset_bottom = 325.0
+offset_bottom = 322.0
 texture = ExtResource("6_0u5ul")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UIRoot/DisplayConsole"]
 layout_mode = 0
-offset_left = 19.5524
-offset_top = 45.5516
+offset_left = 19.552399
+offset_top = 44.551605
 offset_right = 201.552
-offset_bottom = 85.5516
+offset_bottom = 84.551605
 theme_override_constants/separation = 0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/UIRoot/DisplayConsole/HBoxContainer"]
