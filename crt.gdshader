@@ -4,10 +4,10 @@ uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
 uniform bool overlay = false;
 
-uniform float scanlines_opacity : hint_range(0.0, 1.0) = 0.4;
+uniform float scanlines_opacity : hint_range(0.0, 1.0) = 0.2;
 uniform float scanlines_width : hint_range(0.0, 0.5) = 0.25;
-uniform float grille_opacity : hint_range(0.0, 1.0) = 0.3;
-uniform vec2 resolution = vec2(640.0, 480.0);
+uniform float grille_opacity : hint_range(0.0, 1.0) = 0.2;
+uniform vec2 resolution = vec2(1280.0, 720.0);
 
 uniform bool pixelate = true;
 
@@ -15,34 +15,32 @@ uniform bool roll = true;
 uniform float roll_speed = 8.0;
 uniform float roll_size : hint_range(0.0, 100.0) = 15.0;
 uniform float roll_variation : hint_range(0.1, 5.0) = 1.8;
-uniform float distort_intensity : hint_range(0.0, 0.2) = 0.05;
+uniform float distort_intensity : hint_range(0.0, 0.2) = 0.001;
 
-uniform float noise_opacity : hint_range(0.0, 1.0) = 0.4;
-uniform float noise_speed = 5.0;
+uniform float noise_opacity : hint_range(0.0, 1.0) = 0.1;
+uniform float noise_speed = 2.0;
 
 uniform float static_noise_intensity : hint_range(0.0, 1.0) = 0.06;
 
-uniform float aberration : hint_range(-1.0, 1.0) = 0.03;
-uniform float brightness = 1.4;
+uniform float aberration : hint_range(-1.0, 1.0) = 0.005;
+uniform float brightness = 1.15;
 uniform bool discolor = true;
 
-uniform float warp_amount : hint_range(0.0, 5.0) = 1.0;
+uniform float warp_amount : hint_range(0.0, 2.0) = 0.01;
 uniform bool clip_warp = false;
 
-uniform float vignette_intensity = 0.4;
+uniform float vignette_intensity = 0.1;
 uniform float vignette_opacity : hint_range(0.0, 1.0) = 0.5;
 
-
-
 vec2 random(vec2 uv){
-    uv = vec2(dot(uv, vec2(127.1,311.7)), dot(uv, vec2(269.5,183.3)));
+    uv = vec2(dot(uv, vec2(127.1,311.7)) * 0.05, dot(uv, vec2(269.5,183.3))) * 0.05;
     return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
 }
 
 float noise(vec2 uv) {
     vec2 uv_index = floor(uv);
     vec2 uv_fract = fract(uv);
-    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+    vec2 blur = smoothstep(0.0, 0.4, uv_fract);
 
     return mix(
         mix(dot(random(uv_index + vec2(0.0,0.0)), uv_fract - vec2(0.0,0.0)),
@@ -62,7 +60,7 @@ vec2 warp(vec2 uv){
 }
 
 float border (vec2 uv){
-    float radius = min(warp_amount, 0.08);
+    float radius = min(warp_amount, 0.01);
     radius = max(min(min(abs(radius * 2.0), abs(1.0)), abs(1.0)), 1e-5);
     vec2 abs_uv = abs(uv * 2.0 - 1.0) - vec2(1.0, 1.0) + radius;
     float dist = length(max(vec2(0.0), abs_uv)) / radius;
@@ -97,8 +95,8 @@ void fragment()
 
     vec4 text;
     if (roll){
-        text.r = texture(SCREEN_TEXTURE, text_uv + roll_uv * 0.8 + vec2(aberration, 0.0) * .1).r;
-        text.g = texture(SCREEN_TEXTURE, text_uv + roll_uv * 1.2 - vec2(aberration, 0.0) * .1).g;
+        text.r = texture(SCREEN_TEXTURE, text_uv + roll_uv * 0.8 + vec2(aberration, 0.0) * .01).r;
+        text.g = texture(SCREEN_TEXTURE, text_uv + roll_uv * 1.2 - vec2(aberration, 0.0) * .01).g;
         text.b = texture(SCREEN_TEXTURE, text_uv + roll_uv).b;
         text.a = 1.0;
     } else {
