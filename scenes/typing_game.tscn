@@ -1,16 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhr8a25mgvr4b"]
+[gd_scene load_steps=5 format=3 uid="uid://dhr8a25mgvr4b"]
 
-[ext_resource type="Script" uid="uid://8xnpcfahd4ro" path="res://scripts/typing__game.gd" id="1_00bqj"]
-[ext_resource type="FontFile" uid="uid://c6akjplo8upcq" path="res://assets/font/FiraCode-Medium.ttf" id="2_o2ncx"]
-[ext_resource type="Theme" uid="uid://ppjhskob2psu" path="res://scenes/typing_ game.tres" id="3_o2ncx"]
-[ext_resource type="Shader" uid="uid://c13pc7frxl8ne" path="res://crt.gdshader" id="4_mykb5"]
-
-[sub_resource type="Theme" id="Theme_00bqj"]
-default_font = ExtResource("2_o2ncx")
-default_font_size = 40
+[ext_resource type="Script" uid="uid://8xnpcfahd4ro" path="res://scripts/typing__game.gd" id="1_vinoj"]
+[ext_resource type="FontFile" uid="uid://c6akjplo8upcq" path="res://assets/font/FiraCode-Medium.ttf" id="2_bc8on"]
+[ext_resource type="Shader" uid="uid://c13pc7frxl8ne" path="res://crt.gdshader" id="3_8awr0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mykb5"]
-shader = ExtResource("4_mykb5")
+shader = ExtResource("3_8awr0")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.4
 shader_parameter/scanlines_width = 0.25
@@ -40,7 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_00bqj")
+script = ExtResource("1_vinoj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -71,8 +66,9 @@ offset_top = 28.0
 offset_right = 133.0
 offset_bottom = 96.0
 grow_horizontal = 2
-theme = SubResource("Theme_00bqj")
 theme_override_colors/font_color = Color(0.5397813, 0.773703, 0.17267174, 1)
+theme_override_fonts/font = ExtResource("2_bc8on")
+theme_override_font_sizes/font_size = 40
 text = "Typing game"
 
 [node name="TargetTextContainer" type="MarginContainer" parent="CanvasLayer/UIRoot"]
@@ -91,9 +87,10 @@ grow_vertical = 2
 
 [node name="TargetText" type="RichTextLabel" parent="CanvasLayer/UIRoot/TargetTextContainer"]
 layout_mode = 2
-theme = ExtResource("3_o2ncx")
 theme_override_colors/default_color = Color(0.6281089, 0.70495063, 0.54842114, 1)
 theme_override_constants/line_separation = 10
+theme_override_fonts/normal_font = ExtResource("2_bc8on")
+theme_override_font_sizes/normal_font_size = 30
 text = "Computer science isn't about computers, much like astronomy isn't about telescopes. The computer was born to solve problems that did not exist before. One machine can do the work of fifty ordinary men. No machine can do the work of one extraordinary man"
 
 [node name="TextEditContainer" type="MarginContainer" parent="CanvasLayer/UIRoot"]
@@ -112,11 +109,12 @@ grow_vertical = 2
 
 [node name="TextEdit" type="TextEdit" parent="CanvasLayer/UIRoot/TextEditContainer"]
 layout_mode = 2
-theme = ExtResource("3_o2ncx")
 theme_override_colors/font_color = Color(0.6627451, 0.9372549, 0.24705882, 1)
 theme_override_constants/caret_width = 1
 theme_override_constants/outline_size = 0
 theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("2_bc8on")
+theme_override_font_sizes/font_size = 30
 wrap_mode = 1
 caret_blink = true
 caret_blink_interval = 0.7
@@ -132,3 +130,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
+
+[node name="Timer" type="Timer" parent="."]
