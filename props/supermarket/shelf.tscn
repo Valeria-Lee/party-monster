@@ -1,9 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://deh4fxps7okhp"]
+[gd_scene load_steps=7 format=3 uid="uid://deh4fxps7okhp"]
 
 [ext_resource type="Texture2D" uid="uid://1u588ps13emp" path="res://assets/img/supermarket/shelf.png" id="1_tkbuv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tkbuv"]
 size = Vector3(0.8, 0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkbuv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tkbuv"]
+material = SubResource("StandardMaterial3D_tkbuv")
+size = Vector3(0.72, 0.05, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hsovv"]
+material = SubResource("StandardMaterial3D_tkbuv")
+size = Vector3(0.2, 0.1, 0.02)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptpxv"]
+albedo_color = Color(0, 0.49689627, 0.36146632, 1)
 
 [node name="Shelf" type="Area3D"]
 
@@ -14,3 +27,17 @@ texture = ExtResource("1_tkbuv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_tkbuv")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20303324, 0.10040271)
+mesh = SubResource("BoxMesh_tkbuv")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16662991, -0.20303324, 0.20793194)
+mesh = SubResource("BoxMesh_hsovv")
+material = SubResource("StandardMaterial3D_ptpxv")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16561496, -0.20303324, 0.20793194)
+mesh = SubResource("BoxMesh_hsovv")
+material = SubResource("StandardMaterial3D_ptpxv")

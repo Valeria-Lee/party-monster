@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://3anvae8ohlok"]
+[gd_scene load_steps=35 format=3 uid="uid://3anvae8ohlok"]
 
 [ext_resource type="PackedScene" uid="uid://cprjb4dxdu0sl" path="res://scenes/environment.tscn" id="1_netim"]
 [ext_resource type="PackedScene" uid="uid://dqyth0vgg4txt" path="res://ui/gameplay_ui.tscn" id="2_7ve4e"]
@@ -14,7 +14,14 @@
 [ext_resource type="PackedScene" uid="uid://cqgop0ckuerio" path="res://props/supermarket/jar_shelf.tscn" id="10_rmsmh"]
 [ext_resource type="PackedScene" uid="uid://bhmgs6jsgb8s8" path="res://props/supermarket/hanging_cans.tscn" id="11_twprl"]
 [ext_resource type="PackedScene" uid="uid://cobpheco67ups" path="res://props/red_poster.tscn" id="12_1nq08"]
+[ext_resource type="PackedScene" uid="uid://b61p1c5oldab5" path="res://props/supermarket/small_bottles_shelf.tscn" id="14_ecq8v"]
 [ext_resource type="PackedScene" uid="uid://bvxi1sfgq454u" path="res://props/supermarket/blue_soda_shelf.tscn" id="14_rikoi"]
+[ext_resource type="PackedScene" uid="uid://cv4yu4vdu4c0p" path="res://props/supermarket/background_bottle_shelf.tscn" id="15_ecq8v"]
+[ext_resource type="PackedScene" uid="uid://dcbhccisdtqch" path="res://props/supermarket/can_shelf.tscn" id="16_fr14m"]
+[ext_resource type="PackedScene" uid="uid://ghlfpgo0mugd" path="res://props/supermarket/big_soda_shelf.tscn" id="17_6apey"]
+[ext_resource type="PackedScene" uid="uid://cw3il47xlm4a5" path="res://props/supermarket/chips_shelf.tscn" id="18_1g83a"]
+[ext_resource type="Theme" uid="uid://dtvh5xtqn2e82" path="res://ui/current_theme.tres" id="19_5lcrf"]
+[ext_resource type="PackedScene" uid="uid://c3nls2t3fi5pq" path="res://props/supermarket/cash_register_supermarket.tscn" id="20_syxme"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_t5218"]
 size = Vector3(8, 0.1, 6)
@@ -141,13 +148,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_wnluy")
 [node name="Props" type="Node3D" parent="."]
 
 [node name="ChipShelf" parent="Props" instance=ExtResource("8_gngyn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67796, 0.604902, -1.70169)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3527632, 0.604902, -1.70169)
 
 [node name="SodasRefrigerator" parent="Props" instance=ExtResource("9_r3226")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.290962, 0.904, -1.8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03423485, 0.904, -1.8)
 
 [node name="JarShelf" parent="Props" instance=ExtResource("10_rmsmh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13064, 0.741757, -1.599)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4558369, 0.741757, -1.599)
 
 [node name="RedPoster" parent="Props" instance=ExtResource("12_1nq08")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.192, 0.9945811, -0.3)
@@ -157,6 +164,79 @@ transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1, -1.2957367, 1
 
 [node name="BlueSodaShelf" parent="Props" instance=ExtResource("14_rikoi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6882198, 0.46964896, -2.625201)
+
+[node name="Shelf" parent="Props" instance=ExtResource("14_ecq8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.681973, 1, -2.6)
+
+[node name="BackgroundBottleShelf" parent="Props" instance=ExtResource("15_ecq8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9716887, 0.44048375, -2.5030665)
+
+[node name="BackgroundBottleShelf2" parent="Props" instance=ExtResource("15_ecq8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9716887, 1.2025907, -2.5030665)
+
+[node name="BackgroundBottleShelf3" parent="Props" instance=ExtResource("15_ecq8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8038857, 0.44048375, -3.0204606)
+
+[node name="BackgroundBottleShelf4" parent="Props" instance=ExtResource("15_ecq8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8038857, 1.2025907, -3.0204606)
+
+[node name="CanShelf" parent="Props" instance=ExtResource("16_fr14m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31463152, 0.30064756, -2.2653446)
+
+[node name="CanShelf3" parent="Props" instance=ExtResource("16_fr14m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8010247, 1.50174, -2.3593638)
+
+[node name="CanShelf2" parent="Props" instance=ExtResource("16_fr14m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31463152, 0.8530002, -2.2653446)
+
+[node name="BigSodaShelf" parent="Props" instance=ExtResource("17_6apey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8838801, 0.30636692, -2.9300702)
+
+[node name="BigSodaShelf2" parent="Props" instance=ExtResource("17_6apey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8838801, 0.82459426, -2.9300702)
+
+[node name="ChipsShelf" parent="Props" instance=ExtResource("18_1g83a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3505666, 0.8237233, -1.912243)
+
+[node name="SubViewport" type="SubViewport" parent="Props"]
+transparent_bg = true
+canvas_item_default_texture_filter = 3
+size = Vector2i(100, 23)
+render_target_update_mode = 4
+
+[node name="Control" type="Control" parent="Props/SubViewport"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Props/SubViewport/Control"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Props/SubViewport/Control/MarginContainer"]
+clip_contents = false
+layout_mode = 2
+theme = ExtResource("19_5lcrf")
+theme_override_colors/default_color = Color(0.45098, 0.666667, 0.643137, 1)
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[wave][center]the next big thing!! [rainbow]chips and soda[/rainbow] !!"
+scroll_active = false
+
+[node name="CashRegister" parent="Props" instance=ExtResource("20_syxme")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4753878, 0.69613636, -1.482979)
 
 [node name="Light" type="Node3D" parent="."]
 
