@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://3anvae8ohlok"]
+[gd_scene load_steps=28 format=3 uid="uid://3anvae8ohlok"]
 
 [ext_resource type="PackedScene" uid="uid://cprjb4dxdu0sl" path="res://scenes/environment.tscn" id="1_netim"]
 [ext_resource type="PackedScene" uid="uid://dqyth0vgg4txt" path="res://ui/gameplay_ui.tscn" id="2_7ve4e"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://db6h6q8omx4m7" path="res://props/supermarket/light.tscn" id="8_p00p1"]
 [ext_resource type="PackedScene" uid="uid://bgc5nb8cuy503" path="res://props/supermarket/sodas_refrigerator.tscn" id="9_r3226"]
 [ext_resource type="PackedScene" uid="uid://cqgop0ckuerio" path="res://props/supermarket/jar_shelf.tscn" id="10_rmsmh"]
+[ext_resource type="PackedScene" uid="uid://bhmgs6jsgb8s8" path="res://props/supermarket/hanging_cans.tscn" id="11_twprl"]
+[ext_resource type="PackedScene" uid="uid://cobpheco67ups" path="res://props/red_poster.tscn" id="12_1nq08"]
+[ext_resource type="PackedScene" uid="uid://bvxi1sfgq454u" path="res://props/supermarket/blue_soda_shelf.tscn" id="14_rikoi"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_t5218"]
 size = Vector3(8, 0.1, 6)
@@ -146,6 +149,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.290962, 0.904, -1.8)
 [node name="JarShelf" parent="Props" instance=ExtResource("10_rmsmh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13064, 0.741757, -1.599)
 
+[node name="RedPoster" parent="Props" instance=ExtResource("12_1nq08")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.192, 0.9945811, -0.3)
+
+[node name="HangingCans" parent="Props" instance=ExtResource("11_twprl")]
+transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1, -1.2957367, 1.1031746, -2.059548)
+
+[node name="BlueSodaShelf" parent="Props" instance=ExtResource("14_rikoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6882198, 0.46964896, -2.625201)
+
 [node name="Light" type="Node3D" parent="."]
 
 [node name="Light" parent="Light" instance=ExtResource("8_p00p1")]
@@ -157,7 +169,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03842, 1.64187, -1.55941)
 [node name="Light3" parent="Light" instance=ExtResource("8_p00p1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34696, 1.64187, -2.59999)
 
-[node name="Player" parent="." instance=ExtResource("6_eqwgr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74, -1)
-
 [node name="Entities" type="Node3D" parent="."]
+
+[node name="Player" parent="Entities" instance=ExtResource("6_eqwgr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74, -1)

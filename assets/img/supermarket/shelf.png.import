@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xe3sm513322b"
-path.s3tc="res://.godot/imported/hanging_cans.png-33ff9a5fa87037d9f5834d305d7c893a.s3tc.ctex"
+uid="uid://1u588ps13emp"
+path.s3tc="res://.godot/imported/shelf.png-50402bbb2d32cf1a636438435684076d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/img/supermarket/hanging_cans.png"
-dest_files=["res://.godot/imported/hanging_cans.png-33ff9a5fa87037d9f5834d305d7c893a.s3tc.ctex"]
+source_file="res://assets/img/supermarket/shelf.png"
+dest_files=["res://.godot/imported/shelf.png-50402bbb2d32cf1a636438435684076d.s3tc.ctex"]
 
 [params]
 

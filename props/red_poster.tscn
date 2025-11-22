@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cobpheco67ups"]
+[gd_scene load_steps=21 format=3 uid="uid://cobpheco67ups"]
 
 [ext_resource type="Texture2D" uid="uid://df27wa3sjg08" path="res://assets/img/props/poster_redmachine-sheet.png" id="1_8hulu"]
 
@@ -109,12 +109,48 @@ animations = [{
 }]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ab5tn"]
-size = Vector3(0.826569, 0.535889, 0.221985)
+size = Vector3(0.827, 0.536, 0.05)
+
+[sub_resource type="Animation" id="Animation_fc0oa"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.65, 0.88),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.09313011, 0), Vector3(0, 0.15567714, 0), Vector3(0, 0.030988991, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8x7m6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b7ttd"]
+_data = {
+&"RESET": SubResource("Animation_8x7m6"),
+&"idle": SubResource("Animation_fc0oa")
+}
 
 [node name="RedPoster" type="StaticBody3D"]
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-shaded = true
 alpha_cut = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_7ygm0")
@@ -124,3 +160,9 @@ frame_progress = 0.762881
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0063324, -0.246948, 0.0187683)
 shape = SubResource("BoxShape3D_ab5tn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_b7ttd")
+}
+autoplay = "idle"

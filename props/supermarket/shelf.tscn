@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://deh4fxps7okhp"]
+
+[ext_resource type="Texture2D" uid="uid://1u588ps13emp" path="res://assets/img/supermarket/shelf.png" id="1_tkbuv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tkbuv"]
+size = Vector3(0.8, 0.5, 1)
+
+[node name="Shelf" type="Area3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+alpha_cut = 2
+texture_filter = 2
+texture = ExtResource("1_tkbuv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_tkbuv")
