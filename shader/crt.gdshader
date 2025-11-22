@@ -23,7 +23,7 @@ uniform float noise_speed = 2.0;
 uniform float static_noise_intensity : hint_range(0.0, 1.0) = 0.06;
 
 uniform float aberration : hint_range(-1.0, 1.0) = 0.005;
-uniform float brightness = 1.15;
+uniform float brightness = 1.4;
 uniform bool discolor = true;
 
 uniform float warp_amount : hint_range(0.0, 2.0) = 0.01;
@@ -40,7 +40,7 @@ vec2 random(vec2 uv){
 float noise(vec2 uv) {
     vec2 uv_index = floor(uv);
     vec2 uv_fract = fract(uv);
-    vec2 blur = smoothstep(0.0, 0.4, uv_fract);
+    vec2 blur = smoothstep(0.0, 0.2, uv_fract);
 
     return mix(
         mix(dot(random(uv_index + vec2(0.0,0.0)), uv_fract - vec2(0.0,0.0)),
@@ -78,7 +78,7 @@ float vignette(vec2 uv){
 void fragment()
 {
     vec2 uv = overlay ? warp(SCREEN_UV) : warp(UV);
-    vec2 text_uv = uv;
+    vec2 text_uv = uv - 0.4;
     vec2 roll_uv = vec2(0.0);
     float time = roll ? TIME : 0.0;
 
@@ -95,8 +95,8 @@ void fragment()
 
     vec4 text;
     if (roll){
-        text.r = texture(SCREEN_TEXTURE, text_uv + roll_uv * 0.8 + vec2(aberration, 0.0) * .01).r;
-        text.g = texture(SCREEN_TEXTURE, text_uv + roll_uv * 1.2 - vec2(aberration, 0.0) * .01).g;
+        text.r = texture(SCREEN_TEXTURE, text_uv + roll_uv * 0.8 + vec2(aberration, 0.0) * .001).r;
+        text.g = texture(SCREEN_TEXTURE, text_uv + roll_uv * 1.2 - vec2(aberration, 0.0) * .001).g;
         text.b = texture(SCREEN_TEXTURE, text_uv + roll_uv).b;
         text.a = 1.0;
     } else {

@@ -1,7 +1,6 @@
 extends CharacterBody3D
 
 @onready var anim = $AnimatedSprite3D
-@onready var walking_particles = $CPUParticles3D
 const SPEED = 40.0
 var inv = load("res://inventory/player_inventory.tres")
 

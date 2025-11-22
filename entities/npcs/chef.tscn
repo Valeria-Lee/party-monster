@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=3 uid="uid://crsvfutur6dim"]
 
-[ext_resource type="Script" path="res://scripts/chef.gd" id="1_1cpg0"]
+[ext_resource type="Script" uid="uid://btn8hohmku162" path="res://scripts/chef.gd" id="1_1cpg0"]
 [ext_resource type="Texture2D" uid="uid://d1tll2ngpe48n" path="res://assets/img/characters/chef/bread_chef.png" id="1_msu32"]
 [ext_resource type="Texture2D" uid="uid://c6cupkqmsqwgk" path="res://assets/img/characters/chef/eating_chef.png" id="2_eqgu8"]
 [ext_resource type="Resource" uid="uid://d0wgxefnbql3i" path="res://dialogue/chef_dialogues.tres" id="2_ujq8g"]
@@ -215,7 +215,7 @@ size_flags_horizontal = 4
 
 [node name="Dialogue" type="RichTextLabel" parent="CanvasLayer/Control"]
 clip_contents = false
-layout_mode = 2
+layout_mode = 0
 offset_left = -2.0
 offset_top = 86.0
 offset_right = 1110.0

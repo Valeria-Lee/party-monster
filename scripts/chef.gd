@@ -4,15 +4,12 @@ extends CharacterBody3D
 @onready var dialogue_display = $CanvasLayer/Control/Dialogue
 @onready var hacking_minigame = load("res://scenes/computer.tscn")
 @export var chef_dialogues: Dialogues
+@onready var dialogue_ui_text = $CanvasLayer/Control/Dialogue
 var anim_states = ["bread", "eating", "mix"]
 var counter: float
 var dialogue: String
 var initialized: bool
 var last_dialogue: bool
-var show_congratulations: bool
-
-func _ready():
-	show_congratulations = true
 
 func _physics_process(delta):
 	counter += delta
@@ -30,30 +27,30 @@ func _physics_process(delta):
 				await get_tree().create_timer(2).timeout
 				get_tree().change_scene_to_packed(hacking_minigame)
 			
-	if Manager.bakery_pc_fixed && show_congratulations:
-		Manager.advice = "[center][rainbow]ACHIEVEMENT UNLOCKED: BAKERY'S PC FIXED"
-		show_congratulations = false
-			
 	if int(counter) % 5 == 0:
 		anim.play(anim_states.pick_random())
 		counter += 1.0
 	
 func _on_area_3d_body_entered(body):
 	if body.name == "Player":
-		Manager.current_character = "chef"
-		Manager.init()
-		initialized = true
-		if show_congratulations == false:
-			Manager.advice = ""
+		if not Manager.bakery_pc_fixed:
+			Manager.current_character = "chef"
+			Manager.init()
+			initialized = true
+			display_ui("[color=#FFBF00]PRESS [F] TO CHAT[/color]")
 		else:
-			Manager.advice = "[center][wave][F]"
+			display_ui("[rainbow]Awesome! Now you can continue your shopping spree on the supermarket, I'll def go to your party[/rainbow]")
 
 func _on_area_3d_body_exited(body):
 	if body.name == "Player":
 		initialized = false
-		Manager.advice = ""
+		hide_display()
 
-func display_ui(dialogue:String):
+func display_ui(text:String):
+	dialogue_ui_text.visible = true
 	var starter_text: String = "[center][wave][color=#7c9ca8]THE CHEF:[/color] "
 	var ender_text: String =  " [color=#8cac94]∇[/color] [/wave][/center]"
-	dialogue_display.text = starter_text + dialogue + ender_text
+	dialogue_display.text = starter_text + text + ender_text
+
+func hide_display():
+	dialogue_ui_text.visible = false

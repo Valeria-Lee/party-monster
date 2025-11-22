@@ -102,6 +102,7 @@ theme_override_styles/hover = ExtResource("4_bvtkm")
 icon = ExtResource("9_01el2")
 
 [node name="InputConsole" type="Control" parent="CanvasLayer/UIRoot"]
+visible = false
 custom_minimum_size = Vector2(576, 324)
 anchors_preset = 0
 offset_right = 576.0
@@ -116,6 +117,7 @@ offset_bottom = 520.0
 texture = ExtResource("6_0u5ul")
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/UIRoot/InputConsole"]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -162,6 +164,17 @@ grow_vertical = 2
 theme = ExtResource("3_s2nq3")
 theme_override_colors/background_color = Color(0, 0.629075, 0.454695, 0.129412)
 placeholder_text = ">>"
+
+[node name="InputTerminalTitle" type="RichTextLabel" parent="CanvasLayer/UIRoot/InputConsole"]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 204.0
+offset_right = 1059.0
+offset_bottom = 234.0
+theme = ExtResource("3_s2nq3")
+theme_override_colors/default_color = Color(0.23122504, 0.9473334, 0.6315574, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = ">> INPUT TERMINAL"
 
 [node name="DisplayConsole" type="Control" parent="CanvasLayer/UIRoot"]
 visible = false
@@ -254,6 +267,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/UIRoot/DisplayConsole"]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -281,6 +295,17 @@ layout_mode = 2
 theme = ExtResource("3_s2nq3")
 theme_override_styles/normal = ExtResource("4_bvtkm")
 icon = ExtResource("7_03qga")
+
+[node name="InputTerminalTitle" type="RichTextLabel" parent="CanvasLayer/UIRoot/DisplayConsole"]
+layout_mode = 0
+offset_left = 15.493408
+offset_top = 15.992981
+offset_right = 560.4934
+offset_bottom = 45.992996
+theme = ExtResource("3_s2nq3")
+theme_override_colors/default_color = Color(0.23122504, 0.9473334, 0.6315574, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = ">> DISPLAY TERMINAL > words"
 
 [node name="IMG" type="Control" parent="."]
 layout_mode = 1
@@ -338,19 +363,31 @@ grow_vertical = 2
 theme_override_constants/separation = 20
 alignment = 1
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="SplashScreen/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+theme = ExtResource("3_s2nq3")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 56
+bbcode_enabled = true
+text = "[center][shake]WELCOME TO YOUR PC"
+fit_content = true
+scroll_active = false
+
 [node name="TextureRect" type="TextureRect" parent="SplashScreen/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("13_8hyn1")
 stretch_mode = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="SplashScreen/VBoxContainer"]
+[node name="Instructions" type="RichTextLabel" parent="SplashScreen/VBoxContainer"]
 clip_contents = false
 layout_mode = 2
 theme = ExtResource("3_s2nq3")
-theme_override_colors/default_color = Color(0.772549, 0.729412, 0.741176, 1)
-theme_override_font_sizes/normal_font_size = 28
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/line_separation = 20
+theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
-text = "[center][shake]WELCOME TO YOUR PC"
+text = "[center][rainbow]you need to complete writing the following words into the input terminal in order to get the password"
 fit_content = true
 scroll_active = false
 
