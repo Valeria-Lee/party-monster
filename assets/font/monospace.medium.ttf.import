@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://b3ji0dguwdgf0"
-path="res://.godot/imported/dogicapixel.otf-0eab3e128073dd4143ff5954a35dd4da.fontdata"
+uid="uid://c7pqowlqpy0kv"
+path="res://.godot/imported/monospace.medium.ttf-e65360e0bbca3fdc06550c4a78bd073d.fontdata"
 
 [deps]
 
-source_file="res://assets/font/dogicapixel.otf"
-dest_files=["res://.godot/imported/dogicapixel.otf-0eab3e128073dd4143ff5954a35dd4da.fontdata"]
+source_file="res://assets/font/monospace.medium.ttf"
+dest_files=["res://.godot/imported/monospace.medium.ttf-e65360e0bbca3fdc06550c4a78bd073d.fontdata"]
 
 [params]
 
@@ -23,7 +23,7 @@ allow_system_fallback=true
 force_autohinter=false
 modulate_color_glyphs=false
 hinting=1
-subpixel_positioning=1
+subpixel_positioning=4
 keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
