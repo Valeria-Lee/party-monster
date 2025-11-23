@@ -7,6 +7,7 @@ extends Control
 @onready var text_edit_container = $CanvasLayer/UIRoot/TextEditContainer
 @onready var lost_label = $CanvasLayer/UIRoot/LostLabel
 @onready var win_label = $CanvasLayer/UIRoot/WinLabel
+@onready var restart_label = $CanvasLayer/UIRoot/RestartLabel
 @onready var timer = $Timer
 
 var text = "Computer science isn't about computers, much like astronomy isn't about telescopes. The computer was born to solve problems that did not exist before. " \
@@ -18,6 +19,7 @@ func _ready() -> void:
 	target_text.text = text 
 	lost_label.hide()
 	win_label.hide()
+	restart_label.hide()
 	print(target_text.text)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,13 +29,38 @@ func _process(delta: float) -> void:
 		var minutes = time / 60
 		var seconds = time % 60
 		timer_label.text = "%02d:%02d" % [minutes, seconds]
+		
+func restart_game():
+	# Reset UI
+	lost_label.hide()
+	restart_label.hide()
 
+	target_text_container.show()
+	text_edit_container.show()
 
-func _on_timer_timeout() -> void:
-	# Show loss screen 
+	# Reset text
+	text_edit.text = ""
+	text_edit.grab_focus()
+	input_locked = false
+
+	# Restart timer
+	timer.stop()
+	timer.start()
+		
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_R and lost_label.visible:
+			restart_game()
+
+func show_loss():
 	target_text_container.hide()
 	text_edit_container.hide()
 	lost_label.show()
+	restart_label.show()
+
+func _on_timer_timeout() -> void:
+	# Show loss screen 
+	show_loss()
 
 func show_victory():
 	timer.stop()
@@ -75,7 +102,7 @@ func validate_text():
 func _on_text_edit_text_changed() -> void:
 	validate_text()
 
-func _on_text_edit_gui_input(event: InputEvent) -> void:
+func _on_text_edit_gui_input(event: InputEvent) -> void:	
 	if input_locked:
 		if event is InputEventKey:
 			# Allow only Backspace

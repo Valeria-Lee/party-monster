@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhr8a25mgvr4b"]
+[gd_scene load_steps=5 format=3 uid="uid://c0c2vxdii20pv"]
 
 [ext_resource type="Script" uid="uid://8xnpcfahd4ro" path="res://scripts/typing__game.gd" id="1_vinoj"]
 [ext_resource type="FontFile" uid="uid://c6akjplo8upcq" path="res://assets/font/FiraCode-Medium.ttf" id="2_bc8on"]
-[ext_resource type="Shader" uid="uid://c13pc7frxl8ne" path="res://crt.gdshader" id="3_8awr0"]
+[ext_resource type="Shader" uid="uid://c13pc7frxl8ne" path="res://shader/crt.gdshader" id="3_8awr0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mykb5"]
 shader = ExtResource("3_8awr0")
@@ -137,6 +137,25 @@ theme_override_colors/font_color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 theme_override_fonts/font = ExtResource("2_bc8on")
 theme_override_font_sizes/font_size = 50
 text = "00:00"
+
+[node name="RestartLabel" type="Label" parent="CanvasLayer/UIRoot"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.25
+offset_top = 48.5
+offset_right = 178.25
+offset_bottom = 101.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.08827602, 0.8783343, 0.8663664, 1)
+theme_override_fonts/font = ExtResource("2_bc8on")
+theme_override_font_sizes/font_size = 30
+text = "Press r to restart"
 
 [node name="LostLabel" type="Label" parent="CanvasLayer/UIRoot"]
 visible = false
