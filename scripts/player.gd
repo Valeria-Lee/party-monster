@@ -1,7 +1,6 @@
 extends CharacterBody3D
 
 @onready var anim = $AnimatedSprite3D
-@onready var walking_particles = $CPUParticles3D
 const SPEED = 40.0
 var inv = load("res://inventory/player_inventory.tres")
 
@@ -33,13 +32,6 @@ func play_anim(dir:int):
 	else:
 		anim.play("idle")
 		just_stop_walking = true
-
-'''
-func add_walking_particles():
-	if just_stop_walking:
-		# walking_particles.emitting = true
-		just_stop_walking = false
-'''
 
 func collect_item(item:Item):
 	if Money.money - item.price >= 0:

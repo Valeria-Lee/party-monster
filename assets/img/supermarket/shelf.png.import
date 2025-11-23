@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch405d7bapq7d"
-path.s3tc="res://.godot/imported/cash_register.png-6b027655d12638e21634b47e41800e33.s3tc.ctex"
+uid="uid://1u588ps13emp"
+path.s3tc="res://.godot/imported/shelf.png-50402bbb2d32cf1a636438435684076d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/img/supermarket/cash_register.png"
-dest_files=["res://.godot/imported/cash_register.png-6b027655d12638e21634b47e41800e33.s3tc.ctex"]
+source_file="res://assets/img/supermarket/shelf.png"
+dest_files=["res://.godot/imported/shelf.png-50402bbb2d32cf1a636438435684076d.s3tc.ctex"]
 
 [params]
 

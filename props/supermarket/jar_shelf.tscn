@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cqgop0ckuerio"]
 
 [ext_resource type="Texture2D" uid="uid://cdl34mrvbmrdr" path="res://assets/img/supermarket/jars_shelf.png" id="1_82ecm"]
-[ext_resource type="Script" path="res://scripts/jar_shelf.gd" id="1_pvqib"]
+[ext_resource type="Script" uid="uid://c7yaa046pajxr" path="res://scripts/jar_shelf.gd" id="1_pvqib"]
 [ext_resource type="Resource" uid="uid://b3nt1e17awnx8" path="res://inventory/collectables/jar.tres" id="2_ic43v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ymg2s"]
@@ -12,7 +12,6 @@ script = ExtResource("1_pvqib")
 item = ExtResource("2_ic43v")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-shaded = true
 texture_filter = 0
 texture = ExtResource("1_82ecm")
 
