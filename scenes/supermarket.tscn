@@ -151,7 +151,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_wnluy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3527632, 0.604902, -1.70169)
 
 [node name="SodasRefrigerator" parent="Props" instance=ExtResource("9_r3226")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03423485, 0.904, -1.8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03524682, 0.904, -1.8032886)
 
 [node name="JarShelf" parent="Props" instance=ExtResource("10_rmsmh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4558369, 0.741757, -1.599)
@@ -160,7 +160,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4558369, 0.741757, -1.599)
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.192, 0.9945811, -0.3)
 
 [node name="HangingCans" parent="Props" instance=ExtResource("11_twprl")]
-transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1, -1.2957367, 1.1031746, -2.059548)
+transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1, -1.2957367, 1.1031746, -2.0543323)
 
 [node name="BlueSodaShelf" parent="Props" instance=ExtResource("14_rikoi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6882198, 0.46964896, -2.625201)
@@ -236,7 +236,7 @@ text = "[wave][center]the next big thing!! [rainbow]chips and soda[/rainbow] !!"
 scroll_active = false
 
 [node name="CashRegister" parent="Props" instance=ExtResource("20_syxme")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4753878, 0.69613636, -1.482979)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.89, 0.696, -1.52)
 
 [node name="Light" type="Node3D" parent="."]
 

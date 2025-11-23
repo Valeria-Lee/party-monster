@@ -51,6 +51,35 @@ theme_override_colors/font_color = Color(0.0941176, 0.435294, 0.368627, 1)
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 
+[node name="Cart" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -125.0
+offset_bottom = 51.0
+grow_horizontal = 0
+
+[node name="PaymentBG" type="ColorRect" parent="Cart"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 119.0
+offset_bottom = 45.0
+color = Color(4.7168137e-06, 0.6159946, 0.7517111, 1)
+
+[node name="PaymentAmount" type="Label" parent="Cart"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 119.0
+offset_bottom = 37.0
+theme = ExtResource("2_gcunc")
+theme_override_colors/font_color = Color(0.0941176, 0.435294, 0.368627, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
 [node name="Advice" type="Control" parent="."]
 anchors_preset = 0
 offset_top = 409.0

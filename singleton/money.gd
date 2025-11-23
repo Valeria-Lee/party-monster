@@ -1,4 +1,4 @@
 extends Node
 
 var money:int = 100
-var bakery_payment:int = 0
+var cart_payment:int = 0
