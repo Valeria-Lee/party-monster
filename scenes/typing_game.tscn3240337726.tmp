@@ -36,7 +36,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vinoj")
-metadata/_edit_vertical_guides_ = [10.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -136,7 +135,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 theme_override_fonts/font = ExtResource("2_bc8on")
 theme_override_font_sizes/font_size = 50
-text = "00:00"
+text = "00:50"
 
 [node name="LostLabel" type="Label" parent="CanvasLayer/UIRoot"]
 visible = false
@@ -158,26 +157,6 @@ theme_override_font_sizes/font_size = 60
 text = "YOU LOST!"
 horizontal_alignment = 1
 
-[node name="WinLabel" type="Label" parent="CanvasLayer/UIRoot"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -123.0
-offset_top = -33.0
-offset_right = 123.0
-offset_bottom = 33.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.6627451, 0.9372549, 0.24705882, 1)
-theme_override_fonts/font = ExtResource("2_bc8on")
-theme_override_font_sizes/font_size = 60
-text = "YOU WIN!"
-horizontal_alignment = 1
-
 [node name="ShaderLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
@@ -191,10 +170,9 @@ grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 100.0
+wait_time = 120.0
 one_shot = true
 autostart = true
 
-[connection signal="gui_input" from="CanvasLayer/UIRoot/TextEditContainer/TextEdit" to="." method="_on_text_edit_gui_input"]
 [connection signal="text_changed" from="CanvasLayer/UIRoot/TextEditContainer/TextEdit" to="." method="_on_text_edit_text_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
