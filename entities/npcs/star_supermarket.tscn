@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=3 uid="uid://bmp6yydwgg136"]
+
+[ext_resource type="Texture2D" uid="uid://ba2uokmvbw6wt" path="res://assets/img/characters/st4r.png" id="1_4v4hv"]
+[ext_resource type="Script" uid="uid://m2b7ws5aae5c" path="res://scripts/star_supermarket.gd" id="1_i1d5h"]
+[ext_resource type="Theme" uid="uid://dtvh5xtqn2e82" path="res://ui/current_theme.tres" id="3_dqpiy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1d5h"]
+atlas = ExtResource("1_4v4hv")
+region = Rect2(80, 0, 40, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqpiy"]
+atlas = ExtResource("1_4v4hv")
+region = Rect2(40, 0, 40, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmyet"]
+atlas = ExtResource("1_4v4hv")
+region = Rect2(0, 0, 40, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b5ej2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1d5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqpiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmyet")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m7njx"]
+radius = 0.124724
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_045nk"]
+radius = 1.0
+
+[node name="StarSupermarket" type="CharacterBody3D"]
+script = ExtResource("1_i1d5h")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_b5ej2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_m7njx")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_045nk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -248.0
+offset_right = -24.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="Dialogue" type="RichTextLabel" parent="CanvasLayer/Control"]
+clip_contents = false
+layout_mode = 0
+offset_left = -2.0
+offset_top = 86.0
+offset_right = 1110.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_dqpiy")
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://3anvae8ohlok"]
+[gd_scene load_steps=37 format=3 uid="uid://3anvae8ohlok"]
 
 [ext_resource type="PackedScene" uid="uid://cprjb4dxdu0sl" path="res://scenes/environment.tscn" id="1_netim"]
 [ext_resource type="PackedScene" uid="uid://dqyth0vgg4txt" path="res://ui/gameplay_ui.tscn" id="2_7ve4e"]
@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://cw3il47xlm4a5" path="res://props/supermarket/chips_shelf.tscn" id="18_1g83a"]
 [ext_resource type="Theme" uid="uid://dtvh5xtqn2e82" path="res://ui/current_theme.tres" id="19_5lcrf"]
 [ext_resource type="PackedScene" uid="uid://c3nls2t3fi5pq" path="res://props/supermarket/cash_register_supermarket.tscn" id="20_syxme"]
+[ext_resource type="PackedScene" uid="uid://bmp6yydwgg136" path="res://entities/npcs/star_supermarket.tscn" id="23_vb6xa"]
+[ext_resource type="Resource" uid="uid://d1iknxcypnkly" path="res://dialogue/star_dialogues.tres" id="24_qqyex"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_t5218"]
 size = Vector3(8, 0.1, 6)
@@ -253,3 +255,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34696, 1.64187, -2.59999)
 
 [node name="Player" parent="Entities" instance=ExtResource("6_eqwgr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74, -1)
+
+[node name="StarSupermarket" parent="Entities" instance=ExtResource("23_vb6xa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2032259, 0.680109, -1.8054914)
+star_dialogues = ExtResource("24_qqyex")
