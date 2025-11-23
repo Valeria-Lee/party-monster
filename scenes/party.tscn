@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://b0rd5rxl3mbpw"]
+[gd_scene load_steps=19 format=4 uid="uid://b0rd5rxl3mbpw"]
 
 [ext_resource type="PackedScene" uid="uid://cprjb4dxdu0sl" path="res://scenes/environment.tscn" id="1_dqwn8"]
 [ext_resource type="Script" uid="uid://clew83bc02vgm" path="res://scripts/party.gd" id="1_hn6un"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://2juaclm8gc1n" path="res://addons/simplegrasstextured/grass.gd" id="6_dvx2i"]
 [ext_resource type="PackedScene" uid="uid://82bfsbippln2" path="res://props/party/flying_soda.tscn" id="7_7y3g2"]
 [ext_resource type="PackedScene" uid="uid://tl61ef6ortj1" path="res://props/party/chips_plate.tscn" id="8_dvx2i"]
+[ext_resource type="PackedScene" uid="uid://d1poog55kb4r" path="res://props/yellowbot.tscn" id="11_6xc5p"]
 
 [sub_resource type="Gradient" id="Gradient_d51to"]
 colors = PackedColorArray(0.7649481, 1, 0.742479, 1, 0.43701717, 0.99999994, 0.3558523, 1)
@@ -161,6 +162,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3453982, 0.7543913, -0.6909
 
 [node name="ChipsPlate" parent="Props" instance=ExtResource("8_dvx2i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.786746, 0.8040357, -0.4545511)
+
+[node name="Yellowbot" parent="Props" instance=ExtResource("11_6xc5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42186224, 0.19577658)
+
+[node name="Yellowbot2" parent="Props" instance=ExtResource("11_6xc5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6821017, 0.42186224, -2.06361)
 
 [node name="Entities" type="Node3D" parent="."]
 

@@ -67,7 +67,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_prboa"]
-radius = 0.1216
+radius = 0.12207031
 height = 0.669569
 
 [node name="Yellowbot" type="StaticBody3D"]
