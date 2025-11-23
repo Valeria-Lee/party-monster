@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xdg5herb4c4"
-path.s3tc="res://.godot/imported/alien_in_globe.png-488506261b4461f8177811de46946750.s3tc.ctex"
+uid="uid://dlnuxe1df1aqb"
+path.s3tc="res://.godot/imported/alien.png-2b4ef4c7662c3b750994b98a3b96f65a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/img/characters/alien_in_globe.png"
-dest_files=["res://.godot/imported/alien_in_globe.png-488506261b4461f8177811de46946750.s3tc.ctex"]
+source_file="res://assets/img/party/alien.png"
+dest_files=["res://.godot/imported/alien.png-2b4ef4c7662c3b750994b98a3b96f65a.s3tc.ctex"]
 
 [params]
 
