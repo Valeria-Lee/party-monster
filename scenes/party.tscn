@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://cprjb4dxdu0sl" path="res://scenes/environment.tscn" id="1_dqwn8"]
 [ext_resource type="Script" uid="uid://clew83bc02vgm" path="res://scripts/party.gd" id="1_hn6un"]
-[ext_resource type="PackedScene" uid="uid://dqyth0vgg4txt" path="res://ui/gameplay_ui.tscn" id="2_d51to"]
 [ext_resource type="FontFile" uid="uid://b3ji0dguwdgf0" path="res://assets/font/dogicapixel.otf" id="3_7qh7n"]
 [ext_resource type="PackedScene" uid="uid://drms3ewel6okc" path="res://entities/player.tscn" id="4_2j1a7"]
 [ext_resource type="Shader" uid="uid://bi3o8elbtqoni" path="res://addons/simplegrasstextured/shaders/grass.gdshader" id="4_52t1b"]
 [ext_resource type="Texture2D" uid="uid://c84ll861rg7gk" path="res://assets/img/grass_texture.png" id="4_u3xaj"]
+[ext_resource type="Theme" uid="uid://dtvh5xtqn2e82" path="res://ui/current_theme.tres" id="5_6xc5p"]
 [ext_resource type="PackedScene" uid="uid://c2hb0kddowijx" path="res://props/party/table.tscn" id="6_52t1b"]
 [ext_resource type="Script" uid="uid://2juaclm8gc1n" path="res://addons/simplegrasstextured/grass.gd" id="6_dvx2i"]
 [ext_resource type="PackedScene" uid="uid://82bfsbippln2" path="res://props/party/flying_soda.tscn" id="7_7y3g2"]
@@ -77,8 +77,6 @@ script = ExtResource("1_hn6un")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="GameplayUI" parent="UI" instance=ExtResource("2_d51to")]
-
 [node name="TImerLabel" type="RichTextLabel" parent="UI"]
 anchors_preset = 10
 anchor_right = 1.0
@@ -102,10 +100,22 @@ grow_vertical = 2
 
 [node name="WordLabel" type="RichTextLabel" parent="UI/WordSpawner"]
 layout_mode = 0
-offset_right = 373.0
-offset_bottom = 120.0
+offset_right = 511.0
+offset_bottom = 56.0
+theme = ExtResource("5_6xc5p")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
-text = "hola"
+
+[node name="InputWordLabel" type="RichTextLabel" parent="UI/WordSpawner"]
+layout_mode = 0
+offset_right = 511.0
+offset_bottom = 56.0
+theme = ExtResource("5_6xc5p")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "[rainbow]"
 
 [node name="Grass" type="Node3D" parent="."]
 

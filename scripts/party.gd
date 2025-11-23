@@ -4,6 +4,7 @@ extends Node3D
 @onready var party_countdown = $UI/TImerLabel
 var party_time_text = "[right][rainbow]Party protocol activated!\nThe countdown to maximum fun has begun: "
 @onready var word_spawner = $UI/WordSpawner
+@onready var word_input = $UI/WordSpawner/InputWordLabel
 @onready var word_label = $UI/WordSpawner/WordLabel
 var attack_words = ["AWKWARD-DANCE-MOVE","TICKLES","MERGE-CONFLICT-MAYHEM","POWER-OF-FRIENDSHIP","INFINITE-LOOP-KICK"]
 @onready var rng = RandomNumberGenerator.new()
@@ -49,6 +50,7 @@ func change_word_position():
 	var x_coord = randi_range(0,limited_expand_x_area)
 	var y_coord = randi_range(0,limited_expand_y_area)
 	var random_coords = Vector2(x_coord, y_coord)
+	word_input.position = random_coords
 	word_label.position = random_coords
 
 func _input(event):
@@ -70,11 +72,13 @@ func _input(event):
 					
 				if typed_char == current_word[0]:
 					current_word.remove_at(0)
+					word_input.text = word_input.text + "" + typed_char
 					print(current_word)
 				
 				if len(current_word) == 0:
 					rounds_won += 1
 					attack_words.erase(selected_word)
+					word_input.text = "[rainbow]"
 					play_game()
 
 func play_game():
