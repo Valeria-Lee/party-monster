@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogues" load_steps=2 format=3 uid="uid://d1iknxcypnkly"]
+
+[ext_resource type="Script" uid="uid://cm2tbk4352y0g" path="res://dialogue/dialogues.gd" id="1_emlq8"]
+
+[resource]
+script = ExtResource("1_emlq8")
+character = "star"
+dialogues = Array[String](["hi twin"])
+metadata/_custom_type_script = "uid://cm2tbk4352y0g"

@@ -34,10 +34,21 @@ func play_anim(dir:int):
 		just_stop_walking = true
 
 func collect_item(item:Item):
-	if Money.money - item.price >= 0:
-		pay(item)
+	# Add it to the inventory and update the payment variable 
+	add_to_cart(item)
+	
+	#if Money.money - item.price >= 0:
+		#pay(item)
+		#inv.add_item(item)
+	#print(inv)
+	
+func add_to_cart(item: Item):
+	if Money.money - (Money.cart_payment + item.price) >= 0:
 		inv.add_item(item)
-	print(inv)
+		Money.cart_payment = Money.cart_payment + item.price 
+	#if Money.cart_payment + item.price <= 100:
 
-func pay(item:Item):
-	Money.money = Money.money - item.price
+func pay():
+	if Money.money - Money.cart_payment >= 0:
+		Money.money = Money.money - Money.cart_payment
+		Money.cart_payment = 0

@@ -13,4 +13,5 @@ func _on_body_exited(body):
 
 func _process(delta):
 	if Input.is_action_just_pressed("e") and player != null:
+		print('smth')
 		player.collect_item(item)
