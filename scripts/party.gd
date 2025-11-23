@@ -60,14 +60,16 @@ func _input(event):
 			if play_combat:
 				if current_word.is_empty():
 					return
-				
-				var typed_char = char(event.unicode)
+					
+				var typed_char = ""
 				
 				if key_name == "Minus":
 					typed_char = "-"
+				else:
+					typed_char = char(event.unicode).to_upper()
 					
 				if typed_char == current_word[0]:
-					current_word.pop_front()
+					current_word.remove_at(0)
 					print(current_word)
 				
 				if len(current_word) == 0:
