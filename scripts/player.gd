@@ -35,7 +35,6 @@ func play_anim(dir:int):
 
 func collect_item(item:Item):
 	# Add it to the inventory and update the payment variable 
-	inv.add_item(item)
 	add_to_cart(item)
 	
 	#if Money.money - item.price >= 0:
@@ -45,6 +44,7 @@ func collect_item(item:Item):
 	
 func add_to_cart(item: Item):
 	if Money.money - (Money.cart_payment + item.price) >= 0:
+		inv.add_item(item)
 		Money.cart_payment = Money.cart_payment + item.price 
 	#if Money.cart_payment + item.price <= 100:
 
