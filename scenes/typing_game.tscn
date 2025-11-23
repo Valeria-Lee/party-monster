@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhr8a25mgvr4b"]
+[gd_scene load_steps=5 format=3 uid="uid://c0c2vxdii20pv"]
 
 [ext_resource type="Script" uid="uid://8xnpcfahd4ro" path="res://scripts/typing__game.gd" id="1_vinoj"]
 [ext_resource type="FontFile" uid="uid://c6akjplo8upcq" path="res://assets/font/FiraCode-Medium.ttf" id="2_bc8on"]
