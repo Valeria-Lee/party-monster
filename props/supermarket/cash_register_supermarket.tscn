@@ -1,0 +1,171 @@
+[gd_scene load_steps=23 format=3 uid="uid://c3nls2t3fi5pq"]
+
+[ext_resource type="Texture2D" uid="uid://ch405d7bapq7d" path="res://assets/img/supermarket/cash_register.png" id="1_1g6wt"]
+[ext_resource type="FontFile" uid="uid://b3ji0dguwdgf0" path="res://assets/font/dogicapixel.otf" id="2_btbfk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lujkc"]
+atlas = ExtResource("1_1g6wt")
+region = Rect2(0, 0, 52, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycj87"]
+atlas = ExtResource("1_1g6wt")
+region = Rect2(52, 0, 52, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhmq3"]
+atlas = ExtResource("1_1g6wt")
+region = Rect2(104, 0, 52, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4hv6"]
+atlas = ExtResource("1_1g6wt")
+region = Rect2(156, 0, 52, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ds7c"]
+atlas = ExtResource("1_1g6wt")
+region = Rect2(208, 0, 52, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yppy"]
+atlas = ExtResource("1_1g6wt")
+region = Rect2(260, 0, 52, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfrnk"]
+atlas = ExtResource("1_1g6wt")
+region = Rect2(312, 0, 52, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngy3g"]
+atlas = ExtResource("1_1g6wt")
+region = Rect2(364, 0, 52, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vaohp"]
+atlas = ExtResource("1_1g6wt")
+region = Rect2(416, 0, 52, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mghyk"]
+atlas = ExtResource("1_1g6wt")
+region = Rect2(468, 0, 52, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wubhd"]
+atlas = ExtResource("1_1g6wt")
+region = Rect2(520, 0, 52, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_soge2"]
+atlas = ExtResource("1_1g6wt")
+region = Rect2(572, 0, 52, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pao4v"]
+atlas = ExtResource("1_1g6wt")
+region = Rect2(624, 0, 52, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsp7s"]
+atlas = ExtResource("1_1g6wt")
+region = Rect2(676, 0, 52, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6gsx"]
+atlas = ExtResource("1_1g6wt")
+region = Rect2(728, 0, 52, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nk24"]
+atlas = ExtResource("1_1g6wt")
+region = Rect2(780, 0, 52, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6ukg"]
+atlas = ExtResource("1_1g6wt")
+region = Rect2(832, 0, 52, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_os6je"]
+atlas = ExtResource("1_1g6wt")
+region = Rect2(884, 0, 52, 88)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_473rh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lujkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycj87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhmq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4hv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ds7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yppy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfrnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngy3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vaohp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mghyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wubhd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soge2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pao4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsp7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6gsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nk24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6ukg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_os6je")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1g6wt"]
+
+[node name="CashRegisterSupermarket" type="Area3D"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+shaded = true
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_473rh")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_1g6wt")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08959931)
+light_color = Color(1.7808378e-06, 0.70098823, 0.4233066, 1)
+shadow_enabled = true
+omni_range = 0.40730584
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0006544888, 0.02895993)
+billboard = 2
+shaded = true
+alpha_cut = 3
+texture_filter = 2
+modulate = Color(0.23921569, 1, 0.21960784, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "pay
+here"
+font = ExtResource("2_btbfk")
+font_size = 24

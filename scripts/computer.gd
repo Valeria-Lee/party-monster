@@ -12,7 +12,7 @@ extends Control
 @onready var password_text_edit = $PasswordField/TextEdit
 @onready var password_label = $WinScreen/VBoxContainer/PasswordLabel
 @onready var bakery = load("res://scenes/bakery.tscn")
-# @onready var supermarket = load()
+@onready var supermarket = load("res://scenes/supermarket.tscn")
 var input_display_open: bool = false
 var console_display_open: bool = false
 var starter_rich_label = "[center][shake]"
@@ -31,7 +31,8 @@ func _ready():
 func _physics_process(delta):
 	counter += delta
 	
-	if int(counter) < 4:
+	# se espera 8 segundos para iniciar
+	if int(counter) < 8:
 		starting_computer.visible = true
 		hacking_ui.visible = false
 	else:

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv4yu4vdu4c0p"]
+
+[ext_resource type="Texture2D" uid="uid://dceuiokjbfpc5" path="res://assets/img/supermarket/small_bottles.png" id="1_rjfqo"]
+
+[node name="BackgroundBottleShelf" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+shaded = true
+alpha_cut = 3
+texture_filter = 2
+texture = ExtResource("1_rjfqo")

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch405d7bapq7d"
-path.s3tc="res://.godot/imported/cash_register.png-6b027655d12638e21634b47e41800e33.s3tc.ctex"
+uid="uid://cxe8m8sxivea2"
+path.s3tc="res://.godot/imported/small_bottle1.png-fea1fe1a28b4f8410e257acd8ef9b51c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/img/supermarket/cash_register.png"
-dest_files=["res://.godot/imported/cash_register.png-6b027655d12638e21634b47e41800e33.s3tc.ctex"]
+source_file="res://assets/img/supermarket/small_bottle1.png"
+dest_files=["res://.godot/imported/small_bottle1.png-fea1fe1a28b4f8410e257acd8ef9b51c.s3tc.ctex"]
 
 [params]
 
