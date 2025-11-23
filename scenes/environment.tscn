@@ -12,7 +12,7 @@ process_mode = 1
 [sub_resource type="Environment" id="Environment_nuohd"]
 background_mode = 2
 sky = SubResource("Sky_g52hx")
-sky_rotation = Vector3(0, 1.74533, 0)
+sky_rotation = Vector3(0, 1.7453293, 0)
 ambient_light_source = 2
 ambient_light_color = Color(0.9098039, 1, 1, 1)
 ambient_light_energy = 0.4

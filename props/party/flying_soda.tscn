@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://82bfsbippln2"]
+
+[ext_resource type="Texture2D" uid="uid://dfc5adxqu4dib" path="res://assets/img/party/soda1.png" id="1_4n0em"]
+[ext_resource type="Texture2D" uid="uid://c2d0qp7rr0t65" path="res://assets/img/party/soda2.png" id="2_3a63y"]
+[ext_resource type="Texture2D" uid="uid://mauguq6nen3w" path="res://assets/img/party/soda3.png" id="3_6kpot"]
+[ext_resource type="Texture2D" uid="uid://datspogblphdp" path="res://assets/img/party/soda4.png" id="4_a8p8a"]
+[ext_resource type="Texture2D" uid="uid://cd4ajglodipod" path="res://assets/img/party/soda5.png" id="5_tdfv7"]
+[ext_resource type="Texture2D" uid="uid://hhjebl5w77vi" path="res://assets/img/party/soda6.png" id="6_bcml0"]
+[ext_resource type="Texture2D" uid="uid://dmbcd0q568qn5" path="res://assets/img/party/soda7.png" id="7_g3u0a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0cum8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4n0em")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3a63y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6kpot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a8p8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tdfv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bcml0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g3u0a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4n0em"]
+size = Vector3(1, 1, 0.17028809)
+
+[node name="FlyingSoda" type="StaticBody3D"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+alpha_cut = 3
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_0cum8")
+autoplay = "default"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0065307617)
+shape = SubResource("BoxShape3D_4n0em")
