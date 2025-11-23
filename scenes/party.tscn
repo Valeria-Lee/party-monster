@@ -102,7 +102,7 @@ grow_vertical = 2
 
 [node name="WordLabel" type="RichTextLabel" parent="UI/WordSpawner"]
 layout_mode = 0
-offset_right = 440.0
+offset_right = 373.0
 offset_bottom = 120.0
 bbcode_enabled = true
 text = "hola"
