@@ -1,9 +1,10 @@
-[gd_scene load_steps=52 format=3 uid="uid://cjay3xv5i1l56"]
+[gd_scene load_steps=53 format=3 uid="uid://cjay3xv5i1l56"]
 
 [ext_resource type="Script" uid="uid://bpfo2c7up4avb" path="res://scripts/bakery.gd" id="1_o27fm"]
 [ext_resource type="PackedScene" uid="uid://cprjb4dxdu0sl" path="res://scenes/environment.tscn" id="1_uiscc"]
 [ext_resource type="PackedScene" uid="uid://dfdmwk6rio6f1" path="res://props/bakery/cart.tscn" id="1_yv45d"]
 [ext_resource type="PackedScene" uid="uid://sl3j82qm4kix" path="res://props/bakery/vitrine.tscn" id="2_bmsjt"]
+[ext_resource type="PackedScene" uid="uid://dqyth0vgg4txt" path="res://ui/gameplay_ui.tscn" id="3_d5xb1"]
 [ext_resource type="PackedScene" uid="uid://kjjg88pd5vh6" path="res://inventory/collectables/cake.tscn" id="3_d15t5"]
 [ext_resource type="PackedScene" uid="uid://drms3ewel6okc" path="res://entities/player.tscn" id="4_lp18l"]
 [ext_resource type="Texture2D" uid="uid://bao5n33ye2fxh" path="res://assets/img/bakery/woodfloor.png" id="6_00ahm"]
@@ -90,6 +91,10 @@ size = Vector3(0.581604, 1.550354, 1)
 script = ExtResource("1_o27fm")
 
 [node name="Environment" parent="." instance=ExtResource("1_uiscc")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="GameplayUI" parent="UI" instance=ExtResource("3_d5xb1")]
 
 [node name="Props" type="Node3D" parent="."]
 

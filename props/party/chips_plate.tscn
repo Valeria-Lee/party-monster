@@ -1,0 +1,60 @@
+[gd_scene load_steps=12 format=3 uid="uid://tl61ef6ortj1"]
+
+[ext_resource type="Texture2D" uid="uid://bmgsnr425bg5p" path="res://assets/img/party/chips1.png" id="1_fp41o"]
+[ext_resource type="Texture2D" uid="uid://b3dx02o05i3on" path="res://assets/img/party/chips2.png" id="2_w8w41"]
+[ext_resource type="Texture2D" uid="uid://befcaueckyhub" path="res://assets/img/party/chips3.png" id="3_tpy41"]
+[ext_resource type="Texture2D" uid="uid://bhyxe1mtea0yp" path="res://assets/img/party/chips4.png" id="4_fliac"]
+[ext_resource type="Texture2D" uid="uid://cbjgato6fljcj" path="res://assets/img/party/chips5.png" id="5_bf2ex"]
+[ext_resource type="Texture2D" uid="uid://dfavs2konnhwv" path="res://assets/img/party/chips6.png" id="6_6arxj"]
+[ext_resource type="Texture2D" uid="uid://caby4qhbx4a0i" path="res://assets/img/party/chips7.png" id="7_vdqw8"]
+[ext_resource type="Texture2D" uid="uid://cofsmeu301b2p" path="res://assets/img/party/chips8.png" id="8_cln1o"]
+[ext_resource type="Texture2D" uid="uid://qpgklsq1wtro" path="res://assets/img/party/chips9.png" id="9_tim7u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y6cps"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fp41o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_w8w41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tpy41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fliac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bf2ex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6arxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vdqw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cln1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tim7u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fp41o"]
+size = Vector3(1, 1, 0.18725586)
+
+[node name="ChipsPlate" type="StaticBody3D"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_y6cps")
+autoplay = "default"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.013305664)
+shape = SubResource("BoxShape3D_fp41o")
