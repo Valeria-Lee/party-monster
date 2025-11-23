@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://8xnpcfahd4ro" path="res://scripts/typing__game.gd" id="1_vinoj"]
 [ext_resource type="FontFile" uid="uid://c6akjplo8upcq" path="res://assets/font/FiraCode-Medium.ttf" id="2_bc8on"]
-[ext_resource type="Shader" uid="uid://c13pc7frxl8ne" path="res://crt.gdshader" id="3_8awr0"]
+[ext_resource type="Shader" uid="uid://c13pc7frxl8ne" path="res://shader/crt.gdshader" id="3_8awr0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mykb5"]
 shader = ExtResource("3_8awr0")
