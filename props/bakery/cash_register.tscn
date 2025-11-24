@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b35kfo5a3vsuk"]
 
-[ext_resource type="Script" path="res://scripts/cash_register.gd" id="1_3brue"]
+[ext_resource type="Script" uid="uid://dajsxnmvcrarb" path="res://scripts/cash_register_bakery.gd" id="1_va2mg"]
 [ext_resource type="Texture2D" uid="uid://ctdw0u4xk1nyg" path="res://assets/img/bakery/bakery_cash_register.png" id="1_xaraa"]
 [ext_resource type="FontFile" uid="uid://b3ji0dguwdgf0" path="res://assets/font/dogicapixel.otf" id="2_f2s5x"]
 
@@ -13,8 +13,8 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="SphereShape3D" id="SphereShape3D_7075f"]
 radius = 0.891012
 
-[node name="CashRegister" type="StaticBody3D"]
-script = ExtResource("1_3brue")
+[node name="CashRegisterBakery" type="StaticBody3D"]
+script = ExtResource("1_va2mg")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 shaded = true
