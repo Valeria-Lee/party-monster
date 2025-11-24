@@ -6,6 +6,8 @@ var party_time_text = "[right][rainbow]Party protocol activated!\nThe countdown 
 @onready var word_spawner = $UI/WordSpawner
 @onready var word_input = $UI/WordSpawner/InputWordLabel
 @onready var word_label = $UI/WordSpawner/WordLabel
+@onready var dare_dialogue = $UI/DareDialogue
+@onready var evil_police = $Entities/EvilPolice
 var attack_words = ["AWKWARD-DANCE-MOVE","TICKLES","MERGE-CONFLICT-MAYHEM","POWER-OF-FRIENDSHIP","INFINITE-LOOP-KICK"]
 @onready var rng = RandomNumberGenerator.new()
 var play_combat: bool = false
@@ -32,8 +34,10 @@ func _on_timer_timeout():
 	party_countdown.visible = false
 	
 	# aqui viene el policia a hablar contigo hija
-	
-	# esta es la pelea hija
+	evil_police.visible = true
+	evil_police.play("default")
+	dare_dialogue.text = "[shake]Okay, I'm here to spill the tea on that whole situation, shorty. I heard you've been sorting stuff out..."
+	wait(2)
 	play_combat = true
 	play_game()
 	
