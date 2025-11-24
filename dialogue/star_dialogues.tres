@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_emlq8")
 character = "star"
-dialogues = Array[String](["hi twin"])
+dialogues = Array[String](["hi twin", "I heard you're throwin' a party tonight. Just don't make a hell of a mess", "well, let me see how fast those fingers really are, would you mind?"])
 metadata/_custom_type_script = "uid://cm2tbk4352y0g"

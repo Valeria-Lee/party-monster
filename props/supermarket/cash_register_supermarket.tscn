@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://c3nls2t3fi5pq"]
 
 [ext_resource type="Texture2D" uid="uid://ch405d7bapq7d" path="res://assets/img/supermarket/cash_register.png" id="1_1g6wt"]
-[ext_resource type="Script" uid="uid://h4lcb206jf27" path="res://props/supermarket/cash_register_supermarket.gd" id="1_aa5ao"]
+[ext_resource type="Script" uid="uid://h4lcb206jf27" path="res://scripts/cash_register_supermarket.gd" id="1_aa5ao"]
 [ext_resource type="FontFile" uid="uid://b3ji0dguwdgf0" path="res://assets/font/dogicapixel.otf" id="2_btbfk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lujkc"]
