@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://b0rd5rxl3mbpw"]
+[gd_scene load_steps=39 format=4 uid="uid://b0rd5rxl3mbpw"]
 
 [ext_resource type="PackedScene" uid="uid://cprjb4dxdu0sl" path="res://scenes/environment.tscn" id="1_dqwn8"]
 [ext_resource type="Script" uid="uid://clew83bc02vgm" path="res://scripts/party.gd" id="1_hn6un"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://d1poog55kb4r" path="res://props/yellowbot.tscn" id="11_6xc5p"]
 [ext_resource type="Texture2D" uid="uid://c3shbmpxl06v8" path="res://assets/img/items/cake.png" id="12_ketmv"]
 [ext_resource type="PackedScene" uid="uid://ect1tvxhtd24" path="res://props/party/alien_in_globe.tscn" id="13_6j3mf"]
+[ext_resource type="Texture2D" uid="uid://btec2odqeo0e3" path="res://assets/img/characters/placeholder_player.png" id="15_neiws"]
 
 [sub_resource type="Gradient" id="Gradient_d51to"]
 colors = PackedColorArray(0.7649481, 1, 0.742479, 1, 0.43701717, 0.99999994, 0.3558523, 1)
@@ -116,6 +117,87 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe4qu"]
+atlas = ExtResource("15_neiws")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_entxw"]
+atlas = ExtResource("15_neiws")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdusp"]
+atlas = ExtResource("15_neiws")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjltr"]
+atlas = ExtResource("15_neiws")
+region = Rect2(192, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6fnc"]
+atlas = ExtResource("15_neiws")
+region = Rect2(256, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1273y"]
+atlas = ExtResource("15_neiws")
+region = Rect2(320, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chqgu"]
+atlas = ExtResource("15_neiws")
+region = Rect2(384, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wjqm"]
+atlas = ExtResource("15_neiws")
+region = Rect2(448, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pieva"]
+atlas = ExtResource("15_neiws")
+region = Rect2(512, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dmro"]
+atlas = ExtResource("15_neiws")
+region = Rect2(576, 0, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tjsll"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe4qu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_entxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdusp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjltr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6fnc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1273y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chqgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wjqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pieva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dmro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe4qu")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Party" type="Node3D"]
 script = ExtResource("1_hn6un")
 
@@ -126,10 +208,12 @@ script = ExtResource("1_hn6un")
 [node name="TImerLabel" type="RichTextLabel" parent="UI"]
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 2.0
-offset_right = -2.0
-offset_bottom = 70.0
+offset_top = 24.0
+offset_right = -26.0
+offset_bottom = 64.0
 grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
 theme_override_fonts/normal_font = ExtResource("3_7qh7n")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
@@ -162,6 +246,24 @@ theme = ExtResource("5_6xc5p")
 theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
 text = "[rainbow]"
+
+[node name="DareDialogue" type="RichTextLabel" parent="UI"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -228.0
+offset_bottom = -104.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("5_6xc5p")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 20
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
 
 [node name="Grass" type="Node3D" parent="."]
 
@@ -233,3 +335,9 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.73
 
 [node name="Player" parent="Entities" instance=ExtResource("4_2j1a7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="EvilPolice" type="AnimatedSprite3D" parent="Entities"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2697642, 0.6858356, -0.35954118)
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_tjsll")
+autoplay = "default"

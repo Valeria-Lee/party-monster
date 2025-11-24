@@ -6,6 +6,9 @@ var party_time_text = "[right][rainbow]Party protocol activated!\nThe countdown 
 @onready var word_spawner = $UI/WordSpawner
 @onready var word_input = $UI/WordSpawner/InputWordLabel
 @onready var word_label = $UI/WordSpawner/WordLabel
+@onready var dare_dialogue = $UI/DareDialogue
+@onready var evil_police = $Entities/EvilPolice
+@onready var announcement_screen = load("res://scenes/announcements.tscn")
 var attack_words = ["AWKWARD-DANCE-MOVE","TICKLES","MERGE-CONFLICT-MAYHEM","POWER-OF-FRIENDSHIP","INFINITE-LOOP-KICK"]
 @onready var rng = RandomNumberGenerator.new()
 var play_combat: bool = false
@@ -32,8 +35,16 @@ func _on_timer_timeout():
 	party_countdown.visible = false
 	
 	# aqui viene el policia a hablar contigo hija
-	
-	# esta es la pelea hija
+	evil_police.visible = true
+	dare_dialogue.text = "[center][color=#FF0000][!][/color]Okay, I'm here to spill the tea on that whole situation, bae. I heard you've been sorting stuff out..."
+	await get_tree().create_timer(5.0).timeout
+	dare_dialogue.text = "[center][color=#FF0000][!][/color]And it's weird that everyone who's here has a history of wanting to escape. The chef. The cashier. Weird..."
+	await get_tree().create_timer(5.0).timeout
+	dare_dialogue.text = "[center][color=#FF0000][!][/color]So, you're trying to make a break for it, like in a poorly-written action movie, huh?"
+	await get_tree().create_timer(5.0).timeout
+	dare_dialogue.text = "[center][color=#FF0000][!][/color]this gotta be a secret between us, but i'll let you play fair... a word battle... you and me. [rainbow]YOU WIN. YOU ESCAPE.[/rainbow]"
+	await get_tree().create_timer(5.0).timeout
+	dare_dialogue.visible = false
 	play_combat = true
 	play_game()
 	
@@ -82,6 +93,9 @@ func _input(event):
 					play_game()
 
 func play_game():
+	if rounds_won == 3:
+		Manager.party_defeated = true
+		get_tree().change_scene_to_packed(announcement_screen)
 	if play_combat and rounds_won < 3:
 		generate_random_word()
 		change_word_position()
