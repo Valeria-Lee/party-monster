@@ -10,6 +10,7 @@ var advice: String
 @onready var supermarket = load("res://scenes/supermarket.tscn")
 var bakery_pc_fixed: bool
 var supermarket_fixed: bool
+var party_defeated: bool
 
 func init():
 	match current_character:
