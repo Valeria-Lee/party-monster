@@ -44,6 +44,7 @@ config/icon="res://icon.svg"
 Money="*res://singleton/money.gd"
 Manager="*res://singleton/manager.gd"
 SimpleGrass="*res://addons/simplegrasstextured/singleton.tscn"
+InventoryManager="*res://singleton/inventory_manager.gd"
 
 [dialogic]
 
