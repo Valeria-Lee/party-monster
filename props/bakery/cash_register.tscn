@@ -10,8 +10,8 @@ size = Vector3(0.683838, 0.310303, 0.130127)
 [sub_resource type="ViewportTexture" id="ViewportTexture_fy8v8"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_7075f"]
-radius = 0.891012
+[sub_resource type="BoxShape3D" id="BoxShape3D_va2mg"]
+size = Vector3(1, 1, 1.4362183)
 
 [node name="CashRegisterBakery" type="StaticBody3D"]
 script = ExtResource("1_va2mg")
@@ -58,6 +58,7 @@ light_bake_mode = 1
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0613032, 0.329839, 0.0325965)
+visible = false
 gi_mode = 2
 billboard = 2
 texture_filter = 0
@@ -66,7 +67,8 @@ texture = SubResource("ViewportTexture_fy8v8")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("SphereShape3D_7075f")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.21954441)
+shape = SubResource("BoxShape3D_va2mg")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
