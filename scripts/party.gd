@@ -20,7 +20,7 @@ var playing: bool = false
 
 func _ready() -> void:
 	add_child(timer)
-	timer.wait_time = 5.0 # subir a 20
+	timer.wait_time = 15.0 # subir a 20
 	timer.one_shot = true
 	timer.timeout.connect(_on_timer_timeout)
 	timer.start()
@@ -37,13 +37,13 @@ func _on_timer_timeout():
 	# aqui viene el policia a hablar contigo hija
 	evil_police.visible = true
 	dare_dialogue.text = "[center][color=#FF0000][!][/color]Okay, I'm here to spill the tea on that whole situation, bae. I heard you've been sorting stuff out..."
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(8.0).timeout
 	dare_dialogue.text = "[center][color=#FF0000][!][/color]And it's weird that everyone who's here has a history of wanting to escape. The chef. The cashier. Weird..."
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(8.0).timeout
 	dare_dialogue.text = "[center][color=#FF0000][!][/color]So, you're trying to make a break for it, like in a poorly-written action movie, huh?"
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(8.0).timeout
 	dare_dialogue.text = "[center][color=#FF0000][!][/color]this gotta be a secret between us, but i'll let you play fair... a word battle... you and me. [rainbow]YOU WIN. YOU ESCAPE.[/rainbow]"
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(8.0).timeout
 	dare_dialogue.visible = false
 	play_combat = true
 	play_game()
