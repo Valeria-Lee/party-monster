@@ -68,6 +68,9 @@ func show_victory():
 	target_text_container.hide()
 	text_edit_container.hide()
 	win_label.show()
+	await get_tree().create_timer(2).timeout
+	get_tree().change_scene_to_packed(Manager.current_scene)
+	Manager.supermarket_fixed = true 
 	
 var input_locked = false 
 
