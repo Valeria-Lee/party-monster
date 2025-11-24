@@ -1,5 +1,6 @@
-[gd_scene load_steps=37 format=3 uid="uid://3anvae8ohlok"]
+[gd_scene load_steps=41 format=3 uid="uid://3anvae8ohlok"]
 
+[ext_resource type="Script" uid="uid://7twtffy5to8s" path="res://scripts/supermarket.gd" id="1_2eyxq"]
 [ext_resource type="PackedScene" uid="uid://cprjb4dxdu0sl" path="res://scenes/environment.tscn" id="1_netim"]
 [ext_resource type="PackedScene" uid="uid://dqyth0vgg4txt" path="res://ui/gameplay_ui.tscn" id="2_7ve4e"]
 [ext_resource type="Texture2D" uid="uid://cssxhmnd2vtra" path="res://assets/img/supermarket/floor.png" id="3_nog5p"]
@@ -88,7 +89,19 @@ emission_energy_multiplier = 3.0
 uv1_scale = Vector3(2.8, 2, 1)
 texture_filter = 0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7c75j"]
+albedo_color = Color(0.9999997, 0.86693805, 0.64131856, 1)
+rim_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_db33g"]
+material = SubResource("StandardMaterial3D_7c75j")
+size = Vector3(0.2, 1.4, 0.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hhiaj"]
+size = Vector3(0.581604, 1.550354, 1)
+
 [node name="Supermarket" type="Node3D"]
+script = ExtResource("1_2eyxq")
 
 [node name="Environment" parent="." instance=ExtResource("1_netim")]
 
@@ -259,3 +272,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74, -1)
 [node name="StarSupermarket" parent="Entities" instance=ExtResource("23_vb6xa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2032259, 0.680109, -1.8054914)
 star_dialogues = ExtResource("24_qqyex")
+
+[node name="Door" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8671622, 0.7187171, -1.2866575)
+visible = false
+
+[node name="DoorFrame" type="MeshInstance3D" parent="Door"]
+mesh = SubResource("BoxMesh_db33g")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09146118, -0.011383057, 0)
+shape = SubResource("BoxShape3D_hhiaj")
+
+[connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
