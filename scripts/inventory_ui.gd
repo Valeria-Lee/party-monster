@@ -3,11 +3,12 @@ extends Control
 var isOpen: bool
 @onready var slots = $NinePatchRect/GridContainer.get_children()
 @onready var item_display = $MarginContainer/ItemSprite
-@onready var inv: Inventory = load("res://inventory/player_inventory.tres")
+@onready var inv: Inventory = InventoryManager.inventory
 
 func _ready():
 	visible = false
 	inv.update.connect(update_ui)
+	update_ui()
 
 func _process(delta):
 	if Input.is_action_just_pressed("i"):

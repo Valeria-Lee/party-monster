@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @onready var anim = $AnimatedSprite3D
 const SPEED = 40.0
-var inv = load("res://inventory/player_inventory.tres")
+#var inv = load("res://inventory/player_inventory.tres")
 
 var just_stop_walking = false
 
@@ -44,7 +44,7 @@ func collect_item(item:Item):
 	
 func add_to_cart(item: Item):
 	if Money.money - (Money.cart_payment + item.price) >= 0:
-		inv.add_item(item)
+		InventoryManager.inventory.add_item(item)
 		Money.cart_payment = Money.cart_payment + item.price 
 	#if Money.cart_payment + item.price <= 100:
 
